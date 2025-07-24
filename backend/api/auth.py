@@ -170,25 +170,27 @@ async def login_user(login_data: LoginRequest) -> TokenResponse:
         # Generate token
         token = security_manager.create_access_token(token_data)
         
-        return TokenResponse(
-            access_token=token,
-            token_type="bearer",
-            expires_in=security_manager.access_token_expire_minutes * 60,
-            user_info={
+        return {
+            "access_token": token,
+            "token_type": "bearer",
+            "expires_in": security_manager.access_token_expire_minutes * 60,
+            "user_info": {
                 "username": login_data.username,
                 "email": user_data["email"],
                 "roles": user_data["roles"],
                 "permissions": user_data["permissions"]
             }
-        )
+        }
         
     except HTTPException:
         raise
     except Exception as e:
         logger.error(f"Login error: {e}")
+        import traceback
+        logger.error(f"Full traceback: {traceback.format_exc()}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Login process failed"
+            detail=f"Login process failed: {str(e)}"
         )
 
 async def logout_user(current_user: Dict = Depends(authenticate_user)) -> Dict:

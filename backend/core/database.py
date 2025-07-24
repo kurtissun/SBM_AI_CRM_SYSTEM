@@ -10,7 +10,12 @@ import uuid
 from datetime import datetime
 import redis
 import json
+import logging
 from .config import settings
+from contextlib import contextmanager
+from typing import Generator
+
+logger = logging.getLogger(__name__)
 
 # SQLAlchemy setup
 engine = create_engine(settings.DATABASE_URL)
@@ -74,17 +79,45 @@ class Report(Base):
     status = Column(String, default="generated")
 
 # Database functions
-def get_db() -> Session:
-    """Get database session"""
+
+def get_db() -> Generator[Session, None, None]:
+    """Get database session with proper context management"""
     db = SessionLocal()
     try:
-        return db
+        yield db
+        db.commit()
+    except Exception:
+        db.rollback()
+        raise
+    finally:
+        db.close()
+
+@contextmanager
+def get_db_context():
+    """Context manager for database sessions"""
+    db = SessionLocal()
+    try:
+        yield db
+        db.commit()
+    except Exception:
+        db.rollback()
+        raise
     finally:
         db.close()
 
 def init_database():
     """Initialize database tables"""
     Base.metadata.create_all(bind=engine)
+
+def check_database_connection():
+    """Check if database is accessible"""
+    try:
+        with get_db_context() as db:
+            db.execute("SELECT 1")
+        return True
+    except Exception as e:
+        logger.error(f"Database connection failed: {e}")
+        return False
 
 # Cache functions
 class CacheManager:

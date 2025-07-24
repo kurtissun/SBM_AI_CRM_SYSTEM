@@ -37,7 +37,7 @@ async def lifespan(app: FastAPI):
         
         # Initialize AI models
         try:
-            from ..models.deployment.model_server import model_server
+            from ..models.deployment.model_server import model_server  # type: ignore
             logger.info("✅ AI models loaded successfully")
         except Exception as e:
             logger.warning(f"⚠️ AI models not loaded: {e}")
@@ -206,7 +206,7 @@ async def health_check():
     return JSONResponse(content=health_status, status_code=status_code)
 
 # Authentication endpoints
-@app.post("/auth/login", response_model=Dict, tags=["Authentication"])
+@app.post("/auth/login", tags=["Authentication"])
 async def login(login_data: LoginRequest):
     """
     🔐 **User Login**

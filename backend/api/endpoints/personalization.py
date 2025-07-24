@@ -3,9 +3,13 @@ API endpoints for hyper-personalization features
 """
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List, Dict, Any
+import logging
+from datetime import datetime
 from ...core.security import get_current_user
 from ...ai_engine.hyper_personalization import hyper_personalization_engine
 from ...core.database import get_db, Customer
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 

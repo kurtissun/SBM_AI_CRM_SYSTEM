@@ -9,7 +9,7 @@ from datetime import datetime
 
 from ...core.database import get_db, Customer
 from ...core.security import get_current_user
-from ...ai_engine.adaptive_clustering import AdaptiveClusteringEngine
+from ...ai_engine.adaptive_clustering import AdaptiveClustering as AdaptiveClusteringEngine
 from ...ai_engine.insight_generator import IntelligentInsightGenerator
 from ...data_pipeline.data_cleaner import AdvancedDataCleaner
 from ...data_pipeline.data_validator import DataValidator
@@ -255,7 +255,13 @@ async def predict_customer_behavior(
         raise HTTPException(status_code=404, detail="Customer not found")
     
     try:
-        from ...models.deployment.model_server import model_server
+        # Optional import - use fallback if model server not available
+        try:
+            from ...models.deployment.model_server import model_server  # type: ignore
+            use_ml_models = True
+        except ImportError:
+            model_server = None
+            use_ml_models = False
         
         customer_features = {
             "age": customer.age,

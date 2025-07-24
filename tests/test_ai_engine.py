@@ -2,6 +2,7 @@ import pytest
 import numpy as np
 import pandas as pd
 from unittest.mock import patch, MagicMock
+from backend.ai_engine.adaptive_clustering import AdaptiveClustering as AdaptiveClusteringEngine
 
 def test_adaptive_clustering_basic(clustering_engine, sample_customer_data):
     result = clustering_engine.fit_transform(sample_customer_data)

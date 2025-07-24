@@ -3,7 +3,7 @@ Configuration management for SBM AI CRM System
 """
 import os
 from typing import Optional
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 import yaml
 
 class Settings(BaseSettings):
@@ -41,6 +41,7 @@ class Settings(BaseSettings):
     
     class Config:
         env_file = ".env"
+        extra = "allow"  # Allow extra fields from environment
 
 def load_config(config_file: str = None) -> Settings:
     """Load configuration from file or environment"""
