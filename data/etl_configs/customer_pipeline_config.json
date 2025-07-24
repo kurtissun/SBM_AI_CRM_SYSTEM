@@ -1,0 +1,72 @@
+{
+    "pipeline_name": "Customer Data Processing",
+    "version": "1.0",
+    "description": "Standard customer data ETL pipeline",
+    "source": {
+      "type": "csv",
+      "file_path": "data/raw/customer_data.csv",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "header": 0
+    },
+    "transformations": [
+      {
+        "name": "data_cleaning",
+        "type": "cleaning",
+        "parameters": {
+          "handle_missing": true,
+          "remove_duplicates": true,
+          "outlier_detection": true
+        }
+      },
+      {
+        "name": "feature_engineering",
+        "type": "feature_creation",
+        "parameters": {
+          "age_groups": {
+            "bins": [0, 18, 25, 35, 50, 65, 100],
+            "labels": ["minor", "young_adult", "adult", "middle_aged", "mature", "senior"]
+          },
+          "high_rating_flag": {
+            "column": "rating_id",
+            "threshold": 4
+          }
+        }
+      },
+      {
+        "name": "encoding",
+        "type": "categorical_encoding",
+        "parameters": {
+          "columns": ["sex", "expanding_type_name", "expanding_channel_name"],
+          "method": "label_encoding"
+        }
+      }
+    ],
+    "validation": {
+      "enabled": true,
+      "rules_file": "data/validation_rules/customer_validation_rules.json",
+      "quality_threshold": 0.8
+    },
+    "destination": {
+      "type": "database",
+      "table": "customers",
+      "if_exists": "append"
+    },
+    "schedule": {
+      "frequency": "daily",
+      "time": "02:00"
+    },
+    "monitoring": {
+      "alerts": {
+        "quality_degradation": true,
+        "processing_failure": true,
+        "data_drift": true
+      },
+      "metrics": [
+        "processing_time",
+        "data_quality_score",
+        "records_processed",
+        "error_rate"
+      ]
+    }
+  }

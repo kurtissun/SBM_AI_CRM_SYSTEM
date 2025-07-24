@@ -1,0 +1,75 @@
+{
+    "customer_data_rules": [
+      {
+        "name": "customer_id_format",
+        "description": "Customer ID should follow CUST### format",
+        "column": "customer_id",
+        "rule_type": "regex_pattern",
+        "parameters": {
+          "pattern": "^CUST\\d{3,}$"
+        },
+        "severity": "error",
+        "enabled": true
+      },
+      {
+        "name": "age_business_range",
+        "description": "Customer age should be between 16 and 80 for business purposes",
+        "column": "age",
+        "rule_type": "range",
+        "parameters": {
+          "min_value": 16,
+          "max_value": 80
+        },
+        "severity": "warning",
+        "enabled": true
+      },
+      {
+        "name": "rating_valid_scale",
+        "description": "Rating should be on 1-5 scale",
+        "column": "rating_id",
+        "rule_type": "allowed_values",
+        "parameters": {
+          "allowed_values": [1, 2, 3, 4, 5]
+        },
+        "severity": "error",
+        "enabled": true
+      },
+      {
+        "name": "registration_date_recent",
+        "description": "Registration date should be within last 5 years",
+        "column": "register_date",
+        "rule_type": "date_range",
+        "parameters": {
+          "min_date": "2019-01-01",
+          "max_date": "today"
+        },
+        "severity": "warning",
+        "enabled": true
+      }
+    ],
+    "campaign_data_rules": [
+      {
+        "name": "campaign_budget_minimum",
+        "description": "Campaign budget should be at least 1000 RMB",
+        "column": "budget",
+        "rule_type": "range",
+        "parameters": {
+          "min_value": 1000
+        },
+        "severity": "warning",
+        "enabled": true
+      },
+      {
+        "name": "campaign_duration_logical",
+        "description": "Campaign duration should be between 1 and 90 days",
+        "column": "duration_days",
+        "rule_type": "range",
+        "parameters": {
+          "min_value": 1,
+          "max_value": 90
+        },
+        "severity": "error",
+        "enabled": true
+      }
+    ]
+  }

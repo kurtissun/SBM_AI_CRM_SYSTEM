@@ -1,0 +1,108 @@
+machine_learning:
+  clustering:
+    max_clusters: 20
+    min_cluster_size: 50
+    algorithms:
+      - "kmeans"
+      - "gaussian_mixture"
+      - "agglomerative"
+    evaluation_metrics:
+      - "silhouette"
+      - "calinski_harabasz"
+      - "davies_bouldin"
+    
+  feature_engineering:
+    numerical_features:
+      - "age"
+      - "rating_id"
+    categorical_features:
+      - "sex"
+      - "expanding_type_name"
+      - "expanding_channel_name"
+    derived_features:
+      - "age_group"
+      - "high_rating"
+      - "rating_squared"
+    
+  model_management:
+    model_registry: "./models/ml_models/"
+    version_control: true
+    auto_retraining: true
+    retraining_schedule: "0 3 * * 0"  # Weekly on Sunday at 3 AM
+    performance_threshold: 0.7
+
+computer_vision:
+  models:
+    face_detection:
+      confidence_threshold: 0.7
+      min_face_size: 50
+      max_faces_per_frame: 10
+    age_detection:
+      model_path: "./models/cv_models/age_detector.onnx"
+      input_size: [64, 64]
+    gender_classification:
+      model_path: "./models/cv_models/gender_classifier.onnx"
+      input_size: [64, 64]
+    emotion_recognition:
+      model_path: "./models/cv_models/emotion_recognizer.onnx"
+      input_size: [64, 64]
+      
+  camera_system:
+    frame_rate: 30
+    processing_interval: 1.0
+    buffer_size: 100
+    zones:
+      entrance:
+        coordinates: [[0, 0], [200, 300]]
+        capacity: 50
+      main_hall:
+        coordinates: [[200, 0], [800, 600]]
+        capacity: 200
+      food_court:
+        coordinates: [[800, 0], [1200, 400]]
+        capacity: 150
+
+campaign_intelligence:
+  prediction_models:
+    roi_predictor:
+      algorithm: "random_forest"
+      n_estimators: 100
+      max_depth: 10
+      features:
+        - "budget"
+        - "duration_days"
+        - "target_segments"
+        - "seasonal_factor"
+    
+  optimization:
+    ab_testing:
+      min_sample_size: 100
+      significance_level: 0.05
+      power: 0.8
+    budget_allocation:
+      algorithms:
+        - "linear_programming"
+        - "genetic_algorithm"
+      constraints:
+        min_budget_per_segment: 1000
+        max_budget_concentration: 0.6
+
+external_apis:
+  openai:
+    api_key: "your-openai-api-key"
+    model: "gpt-3.5-turbo"
+    max_tokens: 1500
+    temperature: 0.7
+    
+  weather:
+    api_key: "your-weather-api-key"
+    provider: "openweathermap"
+    location: "Shanghai"
+    
+  social_media:
+    wechat:
+      app_id: "your-wechat-app-id"
+      app_secret: "your-wechat-secret"
+    weibo:
+      api_key: "your-weibo-key"
+      api_secret: "your-weibo-secret"

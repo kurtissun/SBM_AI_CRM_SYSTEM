@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SBM Customer Intelligence Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { background: #2563eb; color: white; padding: 20px; border-radius: 8px; }
+        .metric { display: inline-block; margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .chart-placeholder { height: 300px; background: #f5f5f5; margin: 20px 0; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏢 Super Brand Mall - Customer Intelligence Report</h1>
+        <p>Generated on {{report_date}} | Analysis Period: {{analysis_period}}</p>
+    </div>
+    
+    <div class="metrics-section">
+        <h2>📊 Key Metrics</h2>
+        <div class="metric">
+            <h3>Total Customers</h3>
+            <p style="font-size: 24px; color: #2563eb;">{{total_customers}}</p>
+        </div>
+        <div class="metric">
+            <h3>Customer Segments</h3>
+            <p style="font-size: 24px; color: #2563eb;">{{n_segments}}</p>
+        </div>
+        <div class="metric">
+            <h3>Data Quality Score</h3>
+            <p style="font-size: 24px; color: #2563eb;">{{quality_score}}%</p>
+        </div>
+    </div>
+    
+    <div class="segments-section">
+        <h2>🎯 Customer Segments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th>Size</th>
+                    <th>Percentage</th>
+                    <th>Avg Age</th>
+                    <th>Primary Channel</th>
+                    <th>Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{segment_table_rows}}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="insights-section">
+        <h2>💡 Key Insights</h2>
+        <ul>
+            {{insights_list}}
+        </ul>
+    </div>
+    
+    <div class="recommendations-section">
+        <h2>🚀 Recommendations</h2>
+        <ul>
+            {{recommendations_list}}
+        </ul>
+    </div>
+</body>
+</html>

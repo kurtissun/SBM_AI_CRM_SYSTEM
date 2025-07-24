@@ -1,0 +1,47 @@
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  timeout: 300
+  max_request_size: 16777216  # 16MB
+  
+security:
+  secret_key: "your-secret-key-change-in-production"
+  algorithm: "HS256"
+  access_token_expire_minutes: 30
+  refresh_token_expire_days: 7
+  
+cors:
+  allow_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8501"
+    - "https://sbm-crm.example.com"
+  allow_methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "OPTIONS"
+  allow_headers:
+    - "Authorization"
+    - "Content-Type"
+    - "X-Requested-With"
+  allow_credentials: true
+
+rate_limiting:
+  enabled: true
+  requests_per_minute: 100
+  burst_size: 20
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./logs/api.log"
+  rotation: "1 day"
+  retention: "30 days"
+  max_size: "100 MB"
+
+monitoring:
+  metrics_enabled: true
+  health_check_interval: 30
+  performance_tracking: true

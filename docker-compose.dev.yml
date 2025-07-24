@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # Development API Service
+  sbm-api-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: sbm-crm-api-dev
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres-dev:5432/sbm_crm_dev
+      - REDIS_URL=redis://redis-dev:6379/1
+      - ENVIRONMENT=development
+      - DEBUG=true
+    depends_on:
+      - postgres-dev
+      - redis-dev
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    networks:
+      - sbm-dev-network
+    command: uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Development Database
+  postgres-dev:
+    image: postgres:15
+    container_name: sbm-postgres-dev
+    environment:
+      - POSTGRES_DB=sbm_crm_dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    networks:
+      - sbm-dev-network
+
+  # Development Redis
+  redis-dev:
+    image: redis:7-alpine
+    container_name: sbm-redis-dev
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_dev_data:/data
+    networks:
+      - sbm-dev-network
+
+  # Jupyter Notebook for Development
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter
+    container_name: sbm-jupyter
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - .:/app
+    networks:
+      - sbm-dev-network
+
+volumes:
+  postgres_dev_data:
+  redis_dev_data:
+
+networks:
+  sbm-dev-network:
+    driver: bridge

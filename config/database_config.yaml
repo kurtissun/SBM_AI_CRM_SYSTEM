@@ -1,0 +1,46 @@
+database:
+  production:
+    url: "postgresql://user:password@localhost:5432/sbm_crm_prod"
+    pool_size: 20
+    max_overflow: 30
+    pool_timeout: 30
+    pool_recycle: 3600
+    echo: false
+    
+  development:
+    url: "postgresql://user:password@localhost:5432/sbm_crm_dev"
+    pool_size: 5
+    max_overflow: 10
+    pool_timeout: 30
+    pool_recycle: 3600
+    echo: true
+    
+  testing:
+    url: "sqlite:///./test_sbm_crm.db"
+    pool_size: 1
+    max_overflow: 0
+    echo: true
+
+redis:
+  production:
+    url: "redis://localhost:6379/0"
+    password: "your_redis_password"
+    max_connections: 50
+    socket_timeout: 5
+    
+  development:
+    url: "redis://localhost:6379/1"
+    max_connections: 10
+    socket_timeout: 5
+    
+  testing:
+    url: "redis://localhost:6379/2"
+    max_connections: 5
+    socket_timeout: 5
+
+backup:
+  enabled: true
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  retention_days: 30
+  s3_bucket: "sbm-crm-backups"
+  encryption: true

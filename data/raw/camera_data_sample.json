@@ -1,0 +1,52 @@
+[
+    {
+      "camera_id": "CAM_001",
+      "timestamp": "2024-03-15T09:30:00Z",
+      "zone": "entrance",
+      "visitor_count": 12,
+      "demographics": {
+        "age_distribution": {
+          "young_adult": 4,
+          "adult": 6,
+          "middle_aged": 2
+        },
+        "gender_distribution": {
+          "male": 7,
+          "female": 5
+        },
+        "emotion_distribution": {
+          "happy": 8,
+          "neutral": 3,
+          "focused": 1
+        }
+      },
+      "crowd_density": "medium",
+      "dwell_time": 45.2
+    },
+    {
+      "camera_id": "CAM_002",
+      "timestamp": "2024-03-15T09:30:00Z",
+      "zone": "main_hall",
+      "visitor_count": 28,
+      "demographics": {
+        "age_distribution": {
+          "young_adult": 8,
+          "adult": 12,
+          "middle_aged": 6,
+          "senior": 2
+        },
+        "gender_distribution": {
+          "male": 15,
+          "female": 13
+        },
+        "emotion_distribution": {
+          "happy": 18,
+          "neutral": 8,
+          "focused": 2
+        }
+      },
+      "crowd_density": "high",
+      "dwell_time": 127.8
+    }
+  ]
+  

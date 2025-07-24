@@ -1,0 +1,47 @@
+.git
+.gitignore
+README.md
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv
+.venv
+pip-log.txt
+
+# Data files (should be mounted as volumes)
+data/raw/*
+data/processed/*
+logs/*
+backups/*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+.pytest_cache
+.coverage
+htmlcov
+
+# Environment files
+.env*
+!.env.example
+
+# Development files
+notebooks/
+tests/
+docs/

@@ -1,0 +1,43 @@
+{
+    "clustering_analysis": {
+      "timestamp": "2024-03-15T10:30:00Z",
+      "algorithm_used": "adaptive_kmeans",
+      "n_clusters": 6,
+      "silhouette_score": 0.742,
+      "total_customers": 500,
+      "clusters": {
+        "0": {
+          "name": "Tech-Savvy Young Professionals",
+          "size": 87,
+          "percentage": 17.4,
+          "characteristics": {
+            "avg_age": 28.5,
+            "dominant_gender": "mixed",
+            "avg_rating": 4.2,
+            "primary_channel": "支付宝"
+          },
+          "insights": {
+            "description": "Young, tech-savvy customers who prefer digital payment methods",
+            "marketing_strategy": "Digital-first campaigns, mobile app promotions",
+            "target_campaigns": ["mobile_rewards", "tech_features", "early_access"]
+          }
+        },
+        "1": {
+          "name": "Budget-Conscious Families",
+          "size": 95,
+          "percentage": 19.0,
+          "characteristics": {
+            "avg_age": 38.2,
+            "dominant_gender": "female",
+            "avg_rating": 3.8,
+            "primary_channel": "微信"
+          },
+          "insights": {
+            "description": "Family-oriented shoppers focused on value and savings",
+            "marketing_strategy": "Family packages, bulk discounts, loyalty programs",
+            "target_campaigns": ["family_deals", "bulk_savings", "loyalty_rewards"]
+          }
+        }
+      }
+    }
+  }
