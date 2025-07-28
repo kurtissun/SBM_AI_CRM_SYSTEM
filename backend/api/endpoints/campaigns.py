@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List, Dict, Any, Optional
 import json
 from datetime import datetime, timedelta
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from ...core.database import get_db, Campaign
 from ...core.security import get_current_user
@@ -663,3 +663,5 @@ async def get_budget_optimization_insights(
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Budget optimization failed: {str(e)}")
+
+# Campaign advisor endpoints moved to separate campaign_advisor.py file

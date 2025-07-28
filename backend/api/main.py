@@ -13,11 +13,11 @@ from datetime import datetime
 from typing import Dict, Any
 import uvicorn
 
-from ..core.config import settings
-from ..core.database import init_database, get_db
-from ..core.security import get_current_user
-from .auth import login_user, logout_user, refresh_token, get_current_user_info, LoginRequest
-from .endpoints import customers, campaigns, analytics, reports
+from core.config import settings
+from core.database import init_database, get_db
+from core.security import get_current_user
+from api import auth
+from api.endpoints import customers, campaigns, analytics, reports, campaign_advisor, chat, sbm_config, journey, automation, scoring, attribution, behavioral_analytics, notifications, dynamic_segmentation, webhooks, charts
 
 # Configure logging
 logging.basicConfig(
@@ -95,19 +95,43 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Configure appropriately for production
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"],
+    allow_headers=[
+        "accept",
+        "accept-encoding", 
+        "authorization",
+        "content-type",
+        "dnt",
+        "origin",
+        "user-agent",
+        "x-csrftoken",
+        "x-requested-with",
+        "x-file-name",
+        "x-file-size",
+        "cache-control",
+        "pragma"
+    ],
+    expose_headers=["X-Process-Time", "X-New-Access-Token"]
 )
 
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
-# Custom middleware for request logging and timing
+# Custom middleware for request logging, timing, and token refresh
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     start_time = time.time()
     
-    # Log request
-    logger.info(f"📨 {request.method} {request.url.path} - Client: {request.client.host}")
+    # Handle potential client host issues
+    client_host = "unknown"
+    if request.client and request.client.host:
+        client_host = request.client.host
+    
+    # Log request with safe encoding
+    try:
+        path = request.url.path.encode('utf-8', errors='replace').decode('utf-8')
+        logger.info(f"📨 {request.method} {path} - Client: {client_host}")
+    except Exception:
+        logger.info(f"📨 {request.method} [path encoding error] - Client: {client_host}")
     
     try:
         response = await call_next(request)
@@ -117,6 +141,11 @@ async def log_requests(request: Request, call_next):
         
         # Add timing header
         response.headers["X-Process-Time"] = str(process_time)
+        
+        # If a new access token was generated during request processing, add it to response
+        if hasattr(request.state, 'new_access_token'):
+            response.headers["X-New-Access-Token"] = request.state.new_access_token
+            logger.info(f"🔄 Token refreshed for request to {request.url.path}")
         
         # Log response
         logger.info(f"✅ {request.method} {request.url.path} - {response.status_code} - {process_time:.3f}s")
@@ -205,36 +234,12 @@ async def health_check():
     status_code = 200 if health_status["status"] == "healthy" else 503
     return JSONResponse(content=health_status, status_code=status_code)
 
-# Authentication endpoints
-@app.post("/auth/login", tags=["Authentication"])
-async def login(login_data: LoginRequest):
-    """
-    🔐 **User Login**
-    
-    Authenticate user and receive access token for API access.
-    
-    **Demo Credentials:**
-    - Username: `admin`, Password: `admin123` (Full Access)
-    - Username: `marketing_manager`, Password: `marketing123` (Marketing)  
-    - Username: `analyst`, Password: `analyst123` (Analytics)
-    - Username: `viewer`, Password: `viewer123` (Read Only)
-    """
-    return await login_user(login_data)
-
-@app.post("/auth/logout", tags=["Authentication"])
-async def logout(current_user: dict = Depends(get_current_user)):
-    """🚪 User logout"""
-    return await logout_user(current_user)
-
-@app.post("/auth/refresh", tags=["Authentication"])
-async def refresh(current_user: dict = Depends(get_current_user)):
-    """🔄 Refresh access token"""
-    return await refresh_token(current_user)
-
-@app.get("/auth/me", tags=["Authentication"])
-async def get_me(current_user: dict = Depends(get_current_user)):
-    """👤 Get current user information"""
-    return await get_current_user_info(current_user)
+# Include Authentication router
+app.include_router(
+    auth.router,
+    prefix="/auth",
+    tags=["Authentication"]
+)
 
 # System status endpoint
 @app.get("/api/system/status", tags=["System"])
@@ -245,7 +250,7 @@ async def system_status(current_user: dict = Depends(get_current_user)):
     Get comprehensive system status and performance metrics.
     """
     try:
-        from ..core.database import Customer, Campaign
+        from core.database import Customer, Campaign
         
         db = get_db()
         
@@ -342,6 +347,90 @@ app.include_router(
     reports.router, 
     prefix="/api/reports", 
     tags=["Reports"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    campaign_advisor.router, 
+    prefix="/api/campaign-advisor", 
+    tags=["Campaign Advisor"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    chat.router,
+    prefix="/api/chat",
+    tags=["AI Chat Assistant"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    sbm_config.router,
+    prefix="/api/sbm",
+    tags=["SBM Configuration"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    journey.router,
+    prefix="/api/journey",
+    tags=["Customer Journey & Lifecycle"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    automation.router,
+    prefix="/api/automation",
+    tags=["Marketing Automation"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    scoring.router,
+    prefix="/api/scoring",
+    tags=["Lead Scoring & Qualification"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    attribution.router,
+    prefix="/api/attribution",
+    tags=["Revenue Attribution"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    behavioral_analytics.router,
+    prefix="/api/behavioral",
+    tags=["Event Tracking & Behavioral Analytics"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    notifications.router,
+    prefix="/api/notifications",
+    tags=["Real-time Notifications & Alerts"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    dynamic_segmentation.router,
+    prefix="/api/segmentation",
+    tags=["Advanced Dynamic Segmentation"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    webhooks.router,
+    prefix="/api/webhooks",
+    tags=["Webhook Integration System"],
+    dependencies=[Depends(get_current_user)]
+)
+
+app.include_router(
+    charts.router,
+    prefix="/api/charts",
+    tags=["Custom Reporting & Chart Engine"],
     dependencies=[Depends(get_current_user)]
 )
 

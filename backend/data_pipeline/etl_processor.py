@@ -13,8 +13,8 @@ from abc import ABC, abstractmethod
 
 from .data_cleaner import AdvancedDataCleaner
 from .data_validator import DataValidator
-from ..core.database import get_db, Customer, CameraData
-from ..core.config import settings
+from core.database import get_db, Customer, CameraData
+from core.config import settings
 
 logger = logging.getLogger(__name__)
 

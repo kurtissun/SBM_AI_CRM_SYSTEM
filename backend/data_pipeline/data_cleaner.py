@@ -9,8 +9,8 @@ from datetime import datetime, timedelta
 import json
 import re
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-from ..core.config import settings
-from ..core.database import get_db
+from core.config import settings
+from core.database import get_db
 
 logger = logging.getLogger(__name__)
 
@@ -229,8 +229,8 @@ class AdvancedDataCleaner:
             for name, group in name_groups:
                 if len(group) > 1 and len(group['customer_id'].unique()) > 1:
                     # Keep the record with the most recent date if available
-                    if 'register_date' in df.columns:
-                        df_cleaned = df_cleaned.loc[group['register_date'].idxmax()]
+                    if 'registration_time' in df.columns:
+                        df_cleaned = df_cleaned.loc[group['registration_time'].idxmax()]
                         fuzzy_duplicates += len(group) - 1
             
             report['fuzzy_duplicates_removed'] = fuzzy_duplicates

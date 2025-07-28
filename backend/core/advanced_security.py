@@ -533,7 +533,7 @@ class ComplianceManager:
         """Handle data access request (Article 15)"""
         try:
             with get_db_context() as db:
-                from ..core.database import Customer, Campaign, CameraData
+                from core.database import Customer, Campaign, CameraData
                 
                 # Collect all customer data
                 customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
@@ -594,7 +594,7 @@ class ComplianceManager:
         """Handle right to erasure request (Article 17)"""
         try:
             with get_db_context() as db:
-                from ..core.database import Customer
+                from core.database import Customer
                 
                 customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
                 if not customer:
@@ -664,7 +664,7 @@ class ComplianceManager:
         """Handle data rectification request (Article 16)"""
         try:
             with get_db_context() as db:
-                from ..core.database import Customer
+                from core.database import Customer
                 
                 customer = db.query(Customer).filter(Customer.customer_id == customer_id).first()
                 if not customer:

@@ -93,9 +93,9 @@ def main():
         
         uvicorn.run(
             "backend.api.main:app",
-            host="127.0.0.1",
-            port=8000,
-            reload=True,
+            host="0.0.0.0",
+            port=8080,
+            reload=False,  # Disable reload for stability
             log_level="info"
         )
     except KeyboardInterrupt:

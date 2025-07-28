@@ -13,6 +13,7 @@ from ...core.security import get_current_user
 from ...api.auth import require_permission
 from ...ai_engine.insight_generator import IntelligentInsightGenerator
 from ...ai_engine.adaptive_clustering import AdaptiveClustering as AdaptiveClusteringEngine
+from ...ai_engine.generative_analytics import generative_analytics
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -99,6 +100,21 @@ async def get_dashboard_overview(
             },
             "alerts": await _generate_smart_alerts(db, time_range),
             "recommendations": await _generate_dashboard_recommendations(db),
+            "ai_insights": generative_analytics.generate_dashboard_insights({
+                "customer_metrics": {
+                    "total_customers": total_customers,
+                    "new_customers": new_customers,
+                    "high_value_customers": high_value_customers,
+                    "segmentation_rate": segmentation_rate
+                },
+                "campaign_metrics": {
+                    "total_campaigns": total_campaigns,
+                    "active_campaigns": active_campaigns,
+                    "average_roi": avg_roi,
+                    "total_budget": total_budget
+                },
+                "time_range": time_range
+            }),
             "time_range": time_range,
             "generated_at": datetime.now().isoformat()
         }
@@ -110,6 +126,9 @@ async def get_dashboard_overview(
 async def get_customer_insights(
     segment_id: Optional[int] = None,
     analysis_type: str = Query("comprehensive", regex="^(basic|comprehensive|advanced)$"),
+    start_date: Optional[datetime] = Query(None, description="Start date for analysis (ISO format)"),
+    end_date: Optional[datetime] = Query(None, description="End date for analysis (ISO format)"),
+    time_range: Optional[str] = Query(None, regex="^(7d|30d|90d|1y|custom)$", description="Predefined time range"),
     current_user: dict = Depends(require_permission("view_analytics")),
     db: Session = Depends(get_db)
 ):
@@ -119,10 +138,32 @@ async def get_customer_insights(
     Advanced customer analytics with AI-powered insights and predictions.
     """
     try:
-        # Get customer data
+        # Determine date range
+        if time_range and time_range != "custom":
+            # Use predefined time range
+            time_mapping = {
+                "7d": timedelta(days=7),
+                "30d": timedelta(days=30),
+                "90d": timedelta(days=90),
+                "1y": timedelta(days=365)
+            }
+            end_date = datetime.now() if not end_date else end_date
+            start_date = end_date - time_mapping[time_range]
+        elif not start_date or not end_date:
+            # Default to last 30 days if no dates specified
+            end_date = datetime.now()
+            start_date = end_date - timedelta(days=30)
+        
+        # Get customer data with date filtering
         query = db.query(Customer)
         if segment_id is not None:
             query = query.filter(Customer.segment_id == segment_id)
+        
+        # Apply date filtering
+        query = query.filter(
+            Customer.created_at >= start_date,
+            Customer.created_at <= end_date
+        )
         
         customers = query.all()
         
@@ -139,12 +180,21 @@ async def get_customer_insights(
             "created_at": c.created_at
         } for c in customers])
         
+        # Generate AI-powered insights
+        ai_insights = generative_analytics.generate_customer_insights(df, analysis_type)
+        
         insights = {
             "customer_analysis": {
                 "total_customers": len(customers),
                 "segment_id": segment_id,
-                "analysis_type": analysis_type
+                "analysis_type": analysis_type,
+                "date_range": {
+                    "start_date": start_date.isoformat(),
+                    "end_date": end_date.isoformat(),
+                    "days_analyzed": (end_date - start_date).days
+                }
             },
+            "ai_insights": ai_insights,
             "demographics": _analyze_demographics(df),
             "behavior_patterns": _analyze_behavior_patterns(df),
             "segmentation_insights": await _analyze_segmentation(df, db)
@@ -157,7 +207,10 @@ async def get_customer_insights(
         
         if analysis_type == "advanced":
             insights["advanced_patterns"] = await _detect_advanced_patterns(df)
-            insights["market_opportunities"] = await _identify_market_opportunities(df, db)
+            insights["market_opportunities"] = generative_analytics.generate_market_opportunities({
+                "customer_data": df.to_dict('records'),
+                "business_metrics": insights["customer_analysis"]
+            })
             insights["ai_recommendations"] = await _generate_ai_recommendations(df)
         
         return insights
@@ -218,7 +271,7 @@ async def get_real_time_traffic(
                     "message": f"High traffic detected in {zone_name}: {metrics['visitor_count']} visitors"
                 })
         
-        return {
+        traffic_data = {
             "real_time_metrics": {
                 "current_visitors": current_visitors,
                 "total_zones_monitored": len(zone_metrics),
@@ -232,12 +285,19 @@ async def get_real_time_traffic(
             "timestamp": datetime.now().isoformat()
         }
         
+        # Add AI-powered traffic insights
+        traffic_data["ai_insights"] = generative_analytics.generate_traffic_insights(traffic_data)
+        
+        return traffic_data
+        
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Real-time traffic analysis failed: {str(e)}")
 
 @router.get("/performance/campaigns")
 async def get_campaign_performance_analytics(
-    time_range: str = Query("30d"),
+    time_range: str = Query("30d", regex="^(7d|30d|90d|1y|custom)$"),
+    start_date: Optional[datetime] = Query(None, description="Start date for analysis (ISO format)"),
+    end_date: Optional[datetime] = Query(None, description="End date for analysis (ISO format)"),
     campaign_status: Optional[str] = None,
     current_user: dict = Depends(require_permission("view_analytics")),
     db: Session = Depends(get_db)
@@ -248,15 +308,22 @@ async def get_campaign_performance_analytics(
     Comprehensive campaign performance analysis with ROI insights.
     """
     try:
-        # Time range filtering
-        time_mapping = {
-            "7d": timedelta(days=7),
-            "30d": timedelta(days=30),
-            "90d": timedelta(days=90),
-            "1y": timedelta(days=365)
-        }
-        
-        start_date = datetime.now() - time_mapping.get(time_range, timedelta(days=30))
+        # Determine date range
+        if time_range != "custom":
+            # Use predefined time range
+            time_mapping = {
+                "7d": timedelta(days=7),
+                "30d": timedelta(days=30),
+                "90d": timedelta(days=90),
+                "1y": timedelta(days=365)
+            }
+            
+            end_date = datetime.now() if not end_date else end_date
+            start_date = end_date - time_mapping.get(time_range, timedelta(days=30))
+        elif not start_date or not end_date:
+            # Default to last 30 days if no dates specified
+            end_date = datetime.now()
+            start_date = end_date - timedelta(days=30)
         
         # Get campaigns
         query = db.query(Campaign).filter(Campaign.created_at >= start_date)
@@ -291,7 +358,7 @@ async def get_campaign_performance_analytics(
         # Sort by performance
         campaign_performance.sort(key=lambda x: x["roi"], reverse=True)
         
-        return {
+        performance_data = {
             "performance_summary": {
                 "total_campaigns": len(campaigns),
                 "total_budget": total_budget,
@@ -308,6 +375,14 @@ async def get_campaign_performance_analytics(
             "time_range": time_range,
             "analysis_date": datetime.now().isoformat()
         }
+        
+        # Add AI-powered campaign recommendations
+        performance_data["ai_recommendations"] = generative_analytics.generate_campaign_recommendations(
+            performance_data, 
+            {"campaign_performance": campaign_performance}
+        )
+        
+        return performance_data
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Campaign performance analysis failed: {str(e)}")
@@ -354,6 +429,9 @@ async def get_predictive_customer_analytics(
             },
             "generated_at": datetime.now().isoformat()
         }
+        
+        # Add AI-powered predictive insights
+        predictions["ai_insights"] = generative_analytics.generate_predictive_insights(df, prediction_horizon)
         
         return predictions
         

@@ -30,15 +30,40 @@ class Customer(Base):
     __tablename__ = "customers"
     
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    customer_id = Column(String, unique=True, index=True)
-    age = Column(Integer)
-    gender = Column(String)
-    rating_id = Column(Integer)
-    expanding_type_name = Column(String)
-    expanding_channel_name = Column(String)
+    customer_id = Column(String, unique=True, index=True)  # 会员id / id
+    age = Column(Integer)  # existing + calculated from birthday
+    gender = Column(String)  # 性别 / sex (existing)
+    location = Column(String)  # 所在地
+    birthday = Column(DateTime)  # 生日 / birthday
+    registration_time = Column(DateTime)  # 注册时间 / reg_date
+    membership_level = Column(String)  # 会员等级 (橙卡会员，金卡会员，钻卡会员)
+    rating_id = Column(Integer)  # rwting_id
+    expanding_type_name = Column(String)  # expanding_type_name
+    expanding_channel_name = Column(String)  # expanding_channel_name
     segment_id = Column(Integer)
+    
+    # Additional fields for mixed format
+    member_name = Column(String)  # member_nme
+    from_org_id = Column(String)  # from_org_id
+    registration_project = Column(String)  # 注册项目
+    birth_month = Column(Integer)  # 生日月
+    birth_identity = Column(String)  # 出生身份
+    
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Purchase(Base):
+    __tablename__ = "purchases"
+    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    customer_id = Column(String, index=True)  # 会员id
+    purchase_amount = Column(Float)  # 消费金额
+    points_earned = Column(Integer)  # 消费获取积分
+    business_type = Column(String)  # 消费业态
+    store_name = Column(String)  # 消费店铺
+    purchase_time = Column(DateTime)  # 消费时间 (from file data)
+    purchase_date = Column(DateTime, default=datetime.utcnow)  # System record date
+    created_at = Column(DateTime, default=datetime.utcnow)
 
 class CameraData(Base):
     __tablename__ = "camera_data"

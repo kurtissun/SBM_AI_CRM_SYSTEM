@@ -10,7 +10,7 @@ import math
 
 from .campaign_intelligence import CampaignIntelligenceEngine
 from .adaptive_clustering import AdaptiveClusteringEngine
-from ..core.config import settings
+from core.config import settings
 
 logger = logging.getLogger(__name__)
 

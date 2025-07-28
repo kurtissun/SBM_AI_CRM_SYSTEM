@@ -112,7 +112,7 @@ class DataValidator:
             ValidationRule(
                 name="registration_date_logical",
                 description="Registration date should not be in the future",
-                column="register_date",
+                column="registration_time",
                 rule_type="date_logical",
                 parameters={"max_date": "today"},
                 severity=ValidationSeverity.ERROR

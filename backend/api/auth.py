@@ -1,15 +1,17 @@
 """
 Authentication and authorization utilities for FastAPI
 """
-from fastapi import HTTPException, status, Depends
+from fastapi import HTTPException, status, Depends, APIRouter, Request, Response
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials, OAuth2PasswordBearer
 from typing import Dict, Optional, List
 import logging
 from datetime import datetime, timedelta
 from pydantic import BaseModel
 
-from ..core.security import security_manager, rate_limiter
-from ..core.database import get_db
+from core.security import security_manager, rate_limiter
+from core.database import get_db
+
+router = APIRouter()
 
 logger = logging.getLogger(__name__)
 
@@ -23,9 +25,13 @@ class LoginRequest(BaseModel):
 
 class TokenResponse(BaseModel):
     access_token: str
+    refresh_token: str
     token_type: str
     expires_in: int
     user_info: Dict
+
+class RefreshRequest(BaseModel):
+    refresh_token: str
 
 class UserCreate(BaseModel):
     username: str
@@ -116,7 +122,8 @@ def require_role(role: str):
     
     return role_checker
 
-async def login_user(login_data: LoginRequest) -> TokenResponse:
+@router.post("/login", response_model=TokenResponse)
+async def login_user(login_data: LoginRequest, response: Response) -> TokenResponse:
     """
     Login user and return JWT token
     """
@@ -167,18 +174,49 @@ async def login_user(login_data: LoginRequest) -> TokenResponse:
             "login_time": datetime.now().isoformat()
         }
         
-        # Generate token
-        token = security_manager.create_access_token(token_data)
+        # Generate access and refresh tokens
+        access_token = security_manager.create_access_token(token_data)
+        refresh_token = security_manager.create_refresh_token(token_data)
+        
+        # Store session
+        session_id = security_manager.store_session(login_data.username, {
+            "username": login_data.username,
+            "login_time": datetime.now().isoformat(),
+            "user_agent": response.headers.get("user-agent", ""),
+            "roles": user_data["roles"],
+            "permissions": user_data["permissions"]
+        })
+        
+        # Set secure cookies for refresh token
+        response.set_cookie(
+            key="refresh_token",
+            value=refresh_token,
+            max_age=30 * 24 * 60 * 60,  # 30 days
+            httponly=True,
+            secure=True,
+            samesite="lax"
+        )
+        
+        response.set_cookie(
+            key="session_id", 
+            value=session_id,
+            max_age=30 * 24 * 60 * 60,  # 30 days
+            httponly=True,
+            secure=True,
+            samesite="lax"
+        )
         
         return {
-            "access_token": token,
+            "access_token": access_token,
+            "refresh_token": refresh_token,
             "token_type": "bearer",
             "expires_in": security_manager.access_token_expire_minutes * 60,
             "user_info": {
                 "username": login_data.username,
                 "email": user_data["email"],
                 "roles": user_data["roles"],
-                "permissions": user_data["permissions"]
+                "permissions": user_data["permissions"],
+                "session_id": session_id
             }
         }
         
@@ -193,56 +231,59 @@ async def login_user(login_data: LoginRequest) -> TokenResponse:
             detail=f"Login process failed: {str(e)}"
         )
 
-async def logout_user(current_user: Dict = Depends(authenticate_user)) -> Dict:
-    """
-    Logout user (in a real implementation, would invalidate token)
-    """
-    return {
-        "message": "Logged out successfully",
-        "user": current_user["username"],
-        "logged_out_at": datetime.now().isoformat()
-    }
-
-async def refresh_token(current_user: Dict = Depends(authenticate_user)) -> TokenResponse:
-    """
-    Refresh user token
-    """
+@router.post("/refresh", response_model=TokenResponse)
+async def refresh_access_token(refresh_data: RefreshRequest, response: Response) -> TokenResponse:
+    """Refresh access token using refresh token"""
     try:
-        # Create new token with updated timestamp
-        token_data = {
-            "sub": current_user["user_id"],
-            "username": current_user["username"],
-            "email": current_user.get("email"),
-            "roles": current_user["roles"],
-            "permissions": current_user["permissions"],
-            "refresh_time": datetime.now().isoformat()
-        }
+        new_access_token = security_manager.refresh_access_token(refresh_data.refresh_token)
+        payload = security_manager.verify_token(new_access_token)
         
-        new_token = security_manager.create_access_token(token_data)
-        
-        return TokenResponse(
-            access_token=new_token,
-            token_type="bearer", 
-            expires_in=security_manager.access_token_expire_minutes * 60,
-            user_info={
-                "username": current_user["username"],
-                "email": current_user.get("email"),
-                "roles": current_user["roles"],
-                "permissions": current_user["permissions"]
+        return {
+            "access_token": new_access_token,
+            "refresh_token": refresh_data.refresh_token,  # Keep same refresh token
+            "token_type": "bearer",
+            "expires_in": security_manager.access_token_expire_minutes * 60,
+            "user_info": {
+                "username": payload.get("username"),
+                "email": payload.get("email"),
+                "roles": payload.get("roles", []),
+                "permissions": payload.get("permissions", [])
             }
-        )
-        
+        }
     except Exception as e:
-        logger.error(f"Token refresh error: {e}")
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Token refresh failed"
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Could not refresh token"
         )
 
+@router.post("/logout")
+async def logout_user(request: Request, response: Response, current_user: Dict = Depends(authenticate_user)) -> Dict:
+    """Logout user and invalidate session"""
+    try:
+        # Invalidate session
+        session_id = request.cookies.get("session_id")
+        if session_id:
+            security_manager.invalidate_session(session_id)
+        
+        # Clear cookies
+        response.delete_cookie("refresh_token")
+        response.delete_cookie("session_id")
+        
+        return {
+            "message": "Logged out successfully",
+            "user": current_user["username"],
+            "logged_out_at": datetime.now().isoformat()
+        }
+    except Exception as e:
+        return {
+            "message": "Logout completed (with errors)",
+            "user": current_user.get("username", "unknown"),
+            "logged_out_at": datetime.now().isoformat()
+        }
+
+@router.get("/me")
 async def get_current_user_info(current_user: Dict = Depends(authenticate_user)) -> UserResponse:
-    """
-    Get current user information
-    """
+    """Get current user information"""
     return UserResponse(
         user_id=current_user["user_id"],
         username=current_user["username"],
@@ -253,14 +294,32 @@ async def get_current_user_info(current_user: Dict = Depends(authenticate_user))
         last_login=datetime.now()   # Would come from database
     )
 
+@router.post("/generate-api-key")
+async def generate_api_key(current_user: Dict = Depends(authenticate_user)) -> Dict:
+    """Generate a new short API key for the user"""
+    if "admin" not in current_user.get("roles", []):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin role required to generate API keys"
+        )
+    
+    api_key = security_manager.generate_api_key()
+    
+    return {
+        "api_key": api_key,
+        "generated_for": current_user["username"],
+        "generated_at": datetime.now().isoformat(),
+        "expires_in": "Never (until manually revoked)",
+        "note": "Keep this key secure - it won't be shown again"
+    }
+
+@router.post("/change-password")
 async def change_password(
     old_password: str,
     new_password: str,
     current_user: Dict = Depends(authenticate_user)
 ) -> Dict:
-    """
-    Change user password
-    """
+    """Change user password"""
     # In a real implementation, would verify old password and update in database
     return {
         "message": "Password changed successfully",

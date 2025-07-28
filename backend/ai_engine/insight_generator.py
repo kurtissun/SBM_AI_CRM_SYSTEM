@@ -8,7 +8,7 @@ import json
 import logging
 from datetime import datetime, timedelta
 import openai
-from ..core.config import settings
+from core.config import settings
 import joblib
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import AgglomerativeClustering
@@ -95,7 +95,12 @@ class IntelligentInsightGenerator:
         
         # Enhance with AI if available
         if self.use_openai:
-            insights = self._enhance_insights_with_ai(insights, cluster_data)
+            try:
+                insights = self._enhance_insights_with_ai(insights, cluster_data)
+            except AttributeError as e:
+                logger.warning(f"AI enhancement method not available: {e}")
+            except Exception as e:
+                logger.warning(f"AI enhancement failed: {e}")
         
         return insights
     
@@ -1216,3 +1221,68 @@ class SeasonalClusteringManager:
             return 'fall'
         else:
             return 'winter'
+    
+    def _enhance_insights_with_ai(self, insights: Dict, cluster_data: Dict) -> Dict:
+        """
+        Enhance insights with AI-powered recommendations (Claude LLM integration)
+        """
+        try:
+            # Try Claude LLM first
+            from .claude_insights import enhance_insights_with_claude
+            
+            business_context = {
+                'business_type': 'Chinese Shopping Mall / Retail Complex',
+                'location': 'China (Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu)',
+                'customer_base': 'Mixed demographics with Chinese shopping preferences',
+                'store_types': ['零售 (Retail)', '餐饮 (F&B)', '娱乐 (Entertainment)'],
+                'membership_tiers': ['橙卡会员', '金卡会员', '钻卡会员']
+            }
+            
+            enhanced_insights = enhance_insights_with_claude(insights, cluster_data, business_context)
+            
+            # Add traditional AI suggestions as backup
+            for section_name, section_data in enhanced_insights.items():
+                if isinstance(section_data, dict) and 'ai_suggestions' not in section_data:
+                    enhanced_insights[section_name]['ai_suggestions'] = self._generate_ai_suggestions(section_name, section_data)
+            
+            return enhanced_insights
+            
+        except Exception as e:
+            logger.warning(f"AI enhancement failed: {e}")
+            # Fallback to basic enhancement
+            enhanced_insights = insights.copy()
+            for section_name, section_data in enhanced_insights.items():
+                if isinstance(section_data, dict) and 'recommendations' not in section_data:
+                    enhanced_insights[section_name]['ai_suggestions'] = self._generate_ai_suggestions(section_name, section_data)
+            return enhanced_insights
+    
+    def _generate_ai_suggestions(self, section_name: str, section_data: Dict) -> List[str]:
+        """Generate AI-powered suggestions for each section"""
+        suggestions = []
+        
+        if section_name == 'segment_insights':
+            suggestions = [
+                "Consider implementing dynamic pricing based on segment value",
+                "Develop segment-specific loyalty programs",
+                "Create personalized communication strategies"
+            ]
+        elif section_name == 'business_opportunities':
+            suggestions = [
+                "Explore cross-segment product bundling opportunities",
+                "Investigate emerging market trends for expansion",
+                "Consider strategic partnerships for market penetration"
+            ]
+        elif section_name == 'campaign_recommendations':
+            suggestions = [
+                "Implement A/B testing for campaign optimization",
+                "Use predictive analytics for timing optimization",
+                "Consider omnichannel campaign strategies"
+            ]
+        else:
+            suggestions = [
+                "Monitor performance metrics continuously",
+                "Adapt strategies based on market feedback",
+                "Consider seasonal variations in implementation"
+            ]
+        
+        return suggestions

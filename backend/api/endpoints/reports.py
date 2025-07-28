@@ -11,6 +11,7 @@ from pathlib import Path
 from ...core.database import get_db, Customer, Campaign, Report
 from ...core.security import get_current_user
 from ...ai_engine.insight_generator import IntelligentInsightGenerator
+from ...ai_engine.generative_analytics import generative_analytics
 
 router = APIRouter()
 

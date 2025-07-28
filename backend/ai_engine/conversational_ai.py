@@ -4,8 +4,8 @@ import json
 import logging
 from datetime import datetime, timedelta
 import pandas as pd
-from ..core.database import get_db, Customer, Campaign
-from ..core.config import settings
+from core.database import get_db, Customer, Campaign
+from core.config import settings
 
 logger = logging.getLogger(__name__)
 

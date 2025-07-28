@@ -11,7 +11,7 @@ import asyncio
 from collections import defaultdict, deque
 import threading
 from dataclasses import dataclass
-from ..core.config import settings
+from core.config import settings
 from .biometric_analyzer import BiometricAnalyzer
 
 logger = logging.getLogger(__name__)

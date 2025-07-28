@@ -13,7 +13,7 @@ from typing import Dict, List, Tuple, Optional, Any
 from datetime import datetime, timedelta
 import json
 import openai
-from ..core.config import settings
+from core.config import settings
 
 logger = logging.getLogger(__name__)
 

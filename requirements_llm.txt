@@ -1,0 +1,17 @@
+# Local LLM Integration Requirements (Cost-Free)
+# Core LLM functionality
+requests>=2.31.0
+ollama-python>=0.3.0
+
+# LangChain for orchestration (optional, lightweight)
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+
+# Additional utilities
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# Installation instructions:
+# 1. Install Ollama: curl -fsSL https://ollama.ai/install.sh | sh
+# 2. Pull models: ollama pull llama3.2:3b && ollama pull qwen2.5:3b
+# 3. Start service: ollama serve (runs automatically on startup)
