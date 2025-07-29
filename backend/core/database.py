@@ -31,16 +31,21 @@ class Customer(Base):
     
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     customer_id = Column(String, unique=True, index=True)  # 会员id / id
+    name = Column(String)  # Customer name
+    email = Column(String)  # Customer email
     age = Column(Integer)  # existing + calculated from birthday
     gender = Column(String)  # 性别 / sex (existing)
     location = Column(String)  # 所在地
+    total_spent = Column(Float, default=0.0)  # Total customer spending
+    purchase_frequency = Column(Integer, default=0)  # Number of purchases
+    last_purchase_date = Column(DateTime)  # Last purchase date
     birthday = Column(DateTime)  # 生日 / birthday
     registration_time = Column(DateTime)  # 注册时间 / reg_date
     membership_level = Column(String)  # 会员等级 (橙卡会员，金卡会员，钻卡会员)
     rating_id = Column(Integer)  # rwting_id
     expanding_type_name = Column(String)  # expanding_type_name
     expanding_channel_name = Column(String)  # expanding_channel_name
-    segment_id = Column(Integer)
+    segment_id = Column(String)  # Changed to String to match Segment.segment_id
     
     # Additional fields for mixed format
     member_name = Column(String)  # member_nme
@@ -81,9 +86,11 @@ class Campaign(Base):
     __tablename__ = "campaigns"
     
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    campaign_id = Column(String, unique=True, index=True)
     name = Column(String, index=True)
     description = Column(Text)
-    target_segments = Column(Text)  # JSON string
+    campaign_type = Column(String)
+    target_audience = Column(Text)  # JSON string
     start_date = Column(DateTime)
     end_date = Column(DateTime)
     budget = Column(Float)
@@ -92,6 +99,18 @@ class Campaign(Base):
     status = Column(String, default="draft")
     created_by = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+class Segment(Base):
+    __tablename__ = "segments"
+    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    segment_id = Column(String, unique=True, index=True)
+    name = Column(String, index=True)
+    description = Column(Text)
+    criteria = Column(Text)  # JSON string
+    customer_count = Column(Integer, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class Report(Base):
     __tablename__ = "reports"

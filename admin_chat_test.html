@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBM AI CRM - Admin Chat Assistant</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-content {
+            display: flex;
+            height: 600px;
+        }
+        .settings-panel {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .chat-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #fff;
+        }
+        .chat-input {
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+            background: #f8f9fa;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .user-message {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+        .ai-message {
+            background: #e9ecef;
+            color: #333;
+        }
+        .message-time {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+        .input-group input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 12px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .settings-group {
+            margin-bottom: 20px;
+        }
+        .settings-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+        .settings-group select,
+        .settings-group input,
+        .settings-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .status.connected {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.disconnected {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .quick-btn {
+            padding: 6px 12px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .quick-btn:hover {
+            background: #545b62;
+        }
+        .data-insights {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .metric {
+            text-align: center;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .metric-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .metric-label {
+            font-size: 11px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 SBM AI CRM - Admin Chat Assistant</h1>
+            <p>Get real-time insights about customers, campaigns, revenue, and analytics</p>
+        </div>
+        
+        <div class="main-content">
+            <!-- Settings Panel -->
+            <div class="settings-panel">
+                <h3>Chat Settings</h3>
+                
+                <div id="connection-status" class="status disconnected">
+                    Disconnected
+                </div>
+                
+                <div class="settings-group">
+                    <label>Response Style</label>
+                    <select id="chat-style">
+                        <option value="formal">Formal</option>
+                        <option value="casual">Casual</option>
+                        <option value="technical">Technical</option>
+                        <option value="executive">Executive</option>
+                        <option value="pithy">Pithy</option>
+                    </select>
+                </div>
+                
+                <div class="settings-group">
+                    <label>Response Length</label>
+                    <select id="response-length">
+                        <option value="brief">Brief</option>
+                        <option value="detailed" selected>Detailed</option>
+                        <option value="comprehensive">Comprehensive</option>
+                    </select>
+                </div>
+                
+                <div class="settings-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="include-percentages" checked>
+                        <label for="include-percentages">Include Percentages</label>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="include-recommendations" checked>
+                        <label for="include-recommendations">Include Recommendations</label>
+                    </div>
+                </div>
+                
+                <div class="settings-group">
+                    <label>Custom Prompt Prefix</label>
+                    <textarea id="custom-prefix" rows="3" placeholder="Add custom instructions for the AI..."></textarea>
+                </div>
+                
+                <button class="btn" onclick="updatePreferences()">Update Settings</button>
+                
+                <hr>
+                
+                <div class="settings-group">
+                    <label>Quick Actions</label>
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="sendQuickMessage('Tell me about our customers')">Customers</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('How are our campaigns performing?')">Campaigns</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Show me revenue data')">Revenue</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Customer segments analysis')">Segments</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Predict customer churn')">Predictions</button>
+                        <button class="quick-btn" onclick="sendQuickMessage('help')">Help</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Panel -->
+            <div class="chat-panel">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="ai-message message">
+                        <div>Welcome to the SBM AI CRM Admin Chat Assistant! 🤖</div>
+                        <div>I can help you analyze your customer data, campaign performance, revenue insights, and more.</div>
+                        <div>Try asking me about:</div>
+                        <ul>
+                            <li>Customer demographics and behavior</li>
+                            <li>Campaign success rates and ROI</li>
+                            <li>Revenue analysis and top spenders</li>
+                            <li>Customer segmentation insights</li>
+                            <li>Predictive analytics (churn, CLV)</li>
+                        </ul>
+                        <div class="message-time">Ready to help!</div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <div class="input-group">
+                        <input type="text" id="message-input" placeholder="Ask me about your CRM data..." onkeypress="handleKeyPress(event)">
+                        <button class="btn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let websocket = null;
+        let isConnected = false;
+        
+        // Initialize WebSocket connection
+        function connectWebSocket() {
+            try {
+                websocket = new WebSocket('ws://localhost:8080/ws/admin-chat');
+                
+                websocket.onopen = function(event) {
+                    isConnected = true;
+                    updateConnectionStatus('Connected', 'connected');
+                    console.log('WebSocket connected');
+                };
+                
+                websocket.onmessage = function(event) {
+                    const data = JSON.parse(event.data);
+                    handleWebSocketMessage(data);
+                };
+                
+                websocket.onclose = function(event) {
+                    isConnected = false;
+                    updateConnectionStatus('Disconnected', 'disconnected');
+                    console.log('WebSocket disconnected');
+                    
+                    // Try to reconnect after 3 seconds
+                    setTimeout(connectWebSocket, 3000);
+                };
+                
+                websocket.onerror = function(error) {
+                    console.error('WebSocket error:', error);
+                    updateConnectionStatus('Connection Error', 'disconnected');
+                };
+                
+            } catch (error) {
+                console.error('Failed to connect WebSocket:', error);
+                updateConnectionStatus('Connection Failed', 'disconnected');
+            }
+        }
+        
+        function updateConnectionStatus(text, className) {
+            const statusElement = document.getElementById('connection-status');
+            statusElement.textContent = text;
+            statusElement.className = `status ${className}`;
+        }
+        
+        function handleWebSocketMessage(data) {
+            const messagesContainer = document.getElementById('chat-messages');
+            
+            if (data.type === 'connection_established') {
+                addMessage(data.message, 'ai', data.timestamp, null);
+            } else if (data.type === 'chat_response') {
+                addMessage(data.ai_response, 'ai', data.timestamp, data.data_insights);
+            } else if (data.type === 'help_response') {
+                let helpMessage = "Available query types:\n\n";
+                data.available_queries.forEach((query, index) => {
+                    helpMessage += `${index + 1}. **${query.type}**: ${query.description}\n`;
+                    helpMessage += `   Examples: ${query.examples.join(', ')}\n\n`;
+                });
+                addMessage(helpMessage, 'ai', data.timestamp);
+            } else if (data.type === 'preferences_updated') {
+                addMessage(`✅ ${data.message}`, 'ai', data.timestamp);
+            } else if (data.type === 'error') {
+                addMessage(`❌ Error: ${data.message}`, 'ai', data.timestamp);
+            }
+        }
+        
+        function addMessage(content, sender, timestamp, dataInsights = null) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            let messageHTML = `<div>${content.replace(/\n/g, '<br>')}</div>`;
+            
+            // Add data insights if available
+            if (dataInsights && Object.keys(dataInsights).length > 0) {
+                messageHTML += '<div class="data-insights">';
+                messageHTML += '<strong>📊 Data Insights:</strong><br>';
+                
+                // Create metrics display
+                if (dataInsights.total_customers || dataInsights.total_campaigns || dataInsights.total_revenue) {
+                    messageHTML += '<div class="metrics">';
+                    
+                    if (dataInsights.total_customers) {
+                        messageHTML += `<div class="metric">
+                            <div class="metric-value">${dataInsights.total_customers.toLocaleString()}</div>
+                            <div class="metric-label">Total Customers</div>
+                        </div>`;
+                    }
+                    
+                    if (dataInsights.high_value_percentage) {
+                        messageHTML += `<div class="metric">
+                            <div class="metric-value">${dataInsights.high_value_percentage}%</div>
+                            <div class="metric-label">High-Value</div>
+                        </div>`;
+                    }
+                    
+                    if (dataInsights.success_rate_percentage) {
+                        messageHTML += `<div class="metric">
+                            <div class="metric-value">${dataInsights.success_rate_percentage}%</div>
+                            <div class="metric-label">Success Rate</div>
+                        </div>`;
+                    }
+                    
+                    if (dataInsights.total_revenue) {
+                        messageHTML += `<div class="metric">
+                            <div class="metric-value">$${(dataInsights.total_revenue / 1000).toFixed(0)}k</div>
+                            <div class="metric-label">Total Revenue</div>
+                        </div>`;
+                    }
+                    
+                    messageHTML += '</div>';
+                }
+                
+                messageHTML += '</div>';
+            }
+            
+            if (timestamp) {
+                const time = new Date(timestamp).toLocaleTimeString();
+                messageHTML += `<div class="message-time">${time}</div>`;
+            }
+            
+            messageDiv.innerHTML = messageHTML;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            
+            if (message && isConnected) {
+                // Add user message to chat
+                addMessage(message, 'user', new Date().toISOString());
+                
+                // Send to WebSocket
+                websocket.send(JSON.stringify({
+                    message: message
+                }));
+                
+                input.value = '';
+            }
+        }
+        
+        function sendQuickMessage(message) {
+            const input = document.getElementById('message-input');
+            input.value = message;
+            sendMessage();
+        }
+        
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        function updatePreferences() {
+            if (!isConnected) return;
+            
+            const preferences = {
+                style: document.getElementById('chat-style').value,
+                length: document.getElementById('response-length').value,
+                include_percentages: document.getElementById('include-percentages').checked,
+                include_recommendations: document.getElementById('include-recommendations').checked,
+                custom_prompt_prefix: document.getElementById('custom-prefix').value
+            };
+            
+            websocket.send(JSON.stringify({
+                preferences: preferences
+            }));
+        }
+        
+        // Initialize connection when page loads
+        window.addEventListener('load', function() {
+            connectWebSocket();
+        });
+    </script>
+</body>
+</html>

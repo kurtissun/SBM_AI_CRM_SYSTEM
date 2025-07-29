@@ -29,7 +29,7 @@ def check_dependencies():
         'pydantic',
         'numpy',
         'pandas',
-        'scikit-learn',
+        'sklearn',  # scikit-learn imports as 'sklearn'
         'networkx',
         'anthropic',
         'aiohttp',
@@ -128,11 +128,28 @@ def main():
     
     # Import and start the FastAPI app
     try:
-        from api.main import app
-        logger.info("✅ FastAPI application loaded successfully")
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("main", backend_dir / "api" / "main.py")
+        if spec and spec.loader:
+            main_module = importlib.util.module_from_spec(spec)
+            sys.modules["api.main"] = main_module
+            spec.loader.exec_module(main_module)
+            app = main_module.app
+            logger.info("✅ FastAPI application loaded successfully")
+        else:
+            raise ImportError("Could not load api.main module")
     except Exception as e:
         logger.error(f"❌ Failed to load FastAPI application: {e}")
-        sys.exit(1)
+        logger.info("🔄 Attempting alternative import method...")
+        try:
+            # Alternative: try direct import
+            sys.path.insert(0, str(backend_dir))
+            from api.main import app
+            logger.info("✅ FastAPI application loaded via alternative method")
+        except Exception as e2:
+            logger.error(f"❌ Alternative import also failed: {e2}")
+            logger.warning("⚠️  Starting without full FastAPI validation")
+            app = None
     
     # Server configuration
     host = os.getenv("HOST", "0.0.0.0")

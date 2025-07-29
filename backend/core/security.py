@@ -290,3 +290,16 @@ class PrivacyManager:
         return security_manager.hash_data(data)
 
 privacy_manager = PrivacyManager()
+
+# Convenience functions for direct import
+def create_access_token(data: Dict[str, Any]) -> str:
+    """Create access token - convenience wrapper"""
+    return security_manager.create_access_token(data)
+
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    """Verify password - convenience wrapper"""
+    return security_manager.verify_password(plain_password, hashed_password)
+
+def hash_password(password: str) -> str:
+    """Hash password - convenience wrapper"""
+    return security_manager.hash_password(password)

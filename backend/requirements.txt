@@ -1,0 +1,98 @@
+# SBM AI CRM Backend - Python Dependencies
+# Core Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+
+# Database & ORM
+sqlalchemy>=2.0.0
+alembic>=1.13.0
+psycopg2-binary>=2.9.0  # PostgreSQL support
+
+# Authentication & Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+
+# Data Processing & Analytics
+pandas>=2.1.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+networkx>=3.0
+scipy>=1.11.0
+
+# Machine Learning Extensions
+joblib>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# AI & LLM Integration
+anthropic>=0.59.0
+openai>=1.3.0  # Optional OpenAI integration
+transformers>=4.35.0  # Optional local models
+
+# Real-time & Async
+aiohttp>=3.9.0
+websockets>=12.0
+asyncio-mqtt>=0.16.0  # Optional MQTT support
+
+# Network Analysis
+python-louvain>=0.16
+community>=1.0.0b1
+
+# Email & Notifications
+aiosmtplib>=3.0.0
+jinja2>=3.1.0
+
+# Webhook & HTTP
+requests>=2.31.0
+httpx>=0.25.0
+
+# Background Tasks
+celery>=5.3.0  # Optional task queue
+redis>=5.0.0   # Optional caching
+
+# Monitoring & Logging
+prometheus-client>=0.19.0  # Optional metrics
+structlog>=23.2.0          # Optional structured logging
+
+# Development & Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+faker>=20.1.0  # Test data generation
+
+# Data Validation & Serialization
+marshmallow>=3.20.0  # Optional data serialization
+jsonschema>=4.20.0   # JSON validation
+
+# File Processing
+python-magic>=0.4.27  # File type detection
+pillow>=10.1.0        # Image processing
+openpyxl>=3.1.0       # Excel support
+python-docx>=1.1.0    # Word document support
+
+# Configuration Management
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# Time & Date Processing
+python-dateutil>=2.8.2
+pytz>=2023.3
+
+# Performance & Optimization
+cachetools>=5.3.0
+lru-dict>=1.3.0
+
+# Optional Cloud Storage
+boto3>=1.34.0          # AWS S3 support
+google-cloud-storage>=2.10.0  # GCS support
+azure-storage-blob>=12.19.0   # Azure Blob support
+
+# Optional Message Queues
+pika>=1.3.0           # RabbitMQ support
+kafka-python>=2.0.2   # Apache Kafka support
+
+# Utilities
+click>=8.1.0          # CLI utilities
+rich>=13.7.0          # Rich terminal output
+tqdm>=4.66.0          # Progress bars
