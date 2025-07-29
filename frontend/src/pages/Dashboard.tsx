@@ -67,7 +67,7 @@ export const Dashboard: React.FC = () => {
       change: '+12.5%',
       trend: 'up' as const,
       icon: Users,
-      color: 'blue',
+      color: 'blue' as const,
       link: '/customers'
     },
     {
@@ -76,7 +76,7 @@ export const Dashboard: React.FC = () => {
       change: '+23.1%',
       trend: 'up' as const,
       icon: DollarSign,
-      color: 'green',
+      color: 'green' as const,
       link: '/analytics'
     },
     {
@@ -85,7 +85,7 @@ export const Dashboard: React.FC = () => {
       change: '+5',
       trend: 'up' as const,
       icon: Target,
-      color: 'purple',
+      color: 'purple' as const,
       link: '/campaigns'
     },
     {
@@ -94,7 +94,7 @@ export const Dashboard: React.FC = () => {
       change: '-2.4%',
       trend: 'down' as const,
       icon: Building,
-      color: 'orange',
+      color: 'orange' as const,
       link: '/mall-operations'
     },
   ]

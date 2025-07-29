@@ -8,9 +8,11 @@ import {
   Sparkles, Brain, Store, LogOut, HelpCircle, ChevronDown
 } from 'lucide-react'
 import { useAuthStore } from '@/stores/authStore'
+import { useLanguageStore } from '@/stores/languageStore'
 import { AIChat } from './AIChat'
 import { NotificationPanel } from './NotificationPanel'
 import { GlobalSearch } from './GlobalSearch'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 interface NavItem {
   id: string
@@ -45,11 +47,14 @@ export const Layout: React.FC = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { user, logout } = useAuthStore()
+  const { t } = useLanguageStore()
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
   const [showAIChat, setShowAIChat] = useState(false)
   const [showNotifications, setShowNotifications] = useState(false)
   const [showSearch, setShowSearch] = useState(false)
   const [showUserMenu, setShowUserMenu] = useState(false)
+
+  console.log('🎨 Layout Debug:', { user, location: location.pathname })
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/'
@@ -63,7 +68,7 @@ export const Layout: React.FC = () => {
         initial={false}
         animate={{ width: isSidebarCollapsed ? 64 : 256 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="bg-gradient-to-b from-dark-100 to-dark-200 text-white flex flex-col overflow-hidden"
+        className="bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col overflow-hidden"
       >
         {/* Logo */}
         <div className="h-16 flex items-center justify-between px-4 border-b border-white/10">
@@ -171,6 +176,9 @@ export const Layout: React.FC = () => {
               <Bell className="w-5 h-5 text-gray-600" />
               <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
+
+            {/* Language Switcher */}
+            <LanguageSwitcher />
 
             {/* Help */}
             <button

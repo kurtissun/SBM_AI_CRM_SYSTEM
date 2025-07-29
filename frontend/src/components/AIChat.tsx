@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { X, Send, Mic, MicOff, Sparkles, User, Bot, ChevronDown } from 'lucide-react'
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { X, Send, Mic, MicOff, Sparkles, User, Bot } from 'lucide-react'
+import { useMutation } from '@tanstack/react-query'
 import { api } from '@/lib/api'
 import { toast } from 'react-hot-toast'
 
@@ -38,7 +38,6 @@ export const AIChat: React.FC<AIChatProps> = ({ onClose }) => {
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-  const queryClient = useQueryClient()
 
   const chatMutation = useMutation({
     mutationFn: (message: string) => api.post('/admin/chat', { message }),
@@ -54,7 +53,7 @@ export const AIChat: React.FC<AIChatProps> = ({ onClose }) => {
       setMessages(prev => [...prev, aiMessage])
       setIsTyping(false)
     },
-    onError: (error) => {
+    onError: () => {
       setIsTyping(false)
       toast.error('Failed to send message')
     }

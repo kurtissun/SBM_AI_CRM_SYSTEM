@@ -12,11 +12,11 @@ export const CampaignPerformance: React.FC = () => {
   })
 
   const chartData = {
-    labels: campaignData?.campaigns?.map((c: any) => c.name) || [],
+    labels: Array.isArray(campaignData?.campaigns) ? campaignData.campaigns.map((c: any) => c.name) : [],
     datasets: [
       {
         label: 'Impressions',
-        data: campaignData?.campaigns?.map((c: any) => c.impressions) || [],
+        data: Array.isArray(campaignData?.campaigns) ? campaignData.campaigns.map((c: any) => c.impressions) : [],
         backgroundColor: 'rgba(59, 130, 246, 0.8)',
         borderColor: 'rgb(59, 130, 246)',
         borderWidth: 1,
@@ -24,7 +24,7 @@ export const CampaignPerformance: React.FC = () => {
       },
       {
         label: 'Conversions',
-        data: campaignData?.campaigns?.map((c: any) => c.conversions) || [],
+        data: Array.isArray(campaignData?.campaigns) ? campaignData.campaigns.map((c: any) => c.conversions) : [],
         backgroundColor: 'rgba(16, 185, 129, 0.8)',
         borderColor: 'rgb(16, 185, 129)',
         borderWidth: 1,
@@ -156,7 +156,7 @@ export const CampaignPerformance: React.FC = () => {
       <div className="mt-6">
         <h3 className="text-sm font-semibold text-gray-900 mb-3">Top Performing Campaigns</h3>
         <div className="space-y-2">
-          {campaignData?.topCampaigns?.slice(0, 3).map((campaign: any, index: number) => (
+          {Array.isArray(campaignData?.topCampaigns) && campaignData.topCampaigns.slice(0, 3).map((campaign: any, index: number) => (
             <div key={campaign.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">

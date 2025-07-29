@@ -10,16 +10,34 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 4000,
+    host: true, // Listen on all network interfaces 
+    strictPort: false, // Try different ports if 4000 is busy
+    cors: true, // Enable CORS for VPN compatibility
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:8000',
         changeOrigin: true,
+        secure: false,
+      },
+      '/auth': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
       },
       '/ws': {
-        target: 'ws://localhost:8080',
+        target: 'ws://localhost:8000',
         ws: true,
+        changeOrigin: true,
       },
     },
+    hmr: {
+      port: 24678, // Different port for HMR to avoid conflicts
+    },
+  },
+  preview: {
+    port: 4173,
+    host: true,
+    cors: true,
   },
 })

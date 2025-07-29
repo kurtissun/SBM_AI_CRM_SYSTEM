@@ -5,7 +5,8 @@ Original features + Today's new admin chat & engine integrations
 from fastapi import FastAPI, HTTPException, Depends, status, Request, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.exception_handlers import http_exception_handler
 from contextlib import asynccontextmanager
 import logging
@@ -283,6 +284,11 @@ app.add_middleware(
 
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
+# Mount static files for frontend
+static_dir = Path(__file__).parent.parent / "static"
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+
 # Custom middleware for request logging, timing, and token refresh - ORIGINAL
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
@@ -340,6 +346,19 @@ async def custom_http_exception_handler(request: Request, exc: HTTPException):
             }
         }
     )
+
+# Frontend routes - serve React app
+@app.get("/app", response_class=FileResponse)
+@app.get("/app/{path:path}", response_class=FileResponse)
+async def serve_frontend(path: str = ""):
+    """Serve the React frontend application"""
+    static_dir = Path(__file__).parent.parent / "static"
+    index_file = static_dir / "index.html"
+    
+    if index_file.exists():
+        return FileResponse(str(index_file))
+    else:
+        raise HTTPException(status_code=404, detail="Frontend not found")
 
 # Root endpoint - ORIGINAL + NEW features listed
 @app.get("/", tags=["System"])
@@ -431,6 +450,15 @@ async def root():
             "system_status": "/api/system/status"
         }
     }
+
+# Serve frontend
+@app.get("/")
+async def serve_frontend():
+    """Serve the React frontend"""
+    static_file = Path(__file__).parent.parent / "static" / "index.html"
+    if static_file.exists():
+        return FileResponse(static_file)
+    return {"message": "Frontend not found. Please build the frontend first."}
 
 # Health check endpoint - ORIGINAL
 @app.get("/health", tags=["System"])

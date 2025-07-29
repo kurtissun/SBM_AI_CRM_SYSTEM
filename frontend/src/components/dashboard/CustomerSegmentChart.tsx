@@ -90,7 +90,7 @@ export const CustomerSegmentChart: React.FC = () => {
       </div>
 
       <div className="space-y-3">
-        {segmentData?.segments?.map((segment: any, index: number) => (
+        {Array.isArray(segmentData?.segments) && segmentData.segments.map((segment: any, index: number) => (
           <div key={segment.name} className="flex items-center justify-between">
             <div className="flex items-center">
               <div

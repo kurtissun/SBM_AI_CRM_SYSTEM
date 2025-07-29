@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthStore } from './stores/authStore'
 import { Layout } from './components/Layout'
 import { LoginPage } from './pages/auth/LoginPage'
+import { LoadingScreen } from './components/LoadingScreen'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import { Dashboard } from './pages/Dashboard'
 import { CustomerIntelligence } from './pages/CustomerIntelligence'
 import { CampaignCenter } from './pages/CampaignCenter'
@@ -22,13 +24,30 @@ import { VoiceOfCustomer } from './pages/VoiceOfCustomer'
 import { AdminCenter } from './pages/AdminCenter'
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const isAuthenticated = useAuthStore(state => state.isAuthenticated)
+  const { isAuthenticated, isInitialized } = useAuthStore(state => ({
+    isAuthenticated: state.isAuthenticated,
+    isInitialized: state.isInitialized
+  }))
+  
+  console.log('🛡️ ProtectedRoute Debug:', { isAuthenticated, isInitialized })
+  
+  // Show loading while checking auth
+  if (!isInitialized) {
+    console.log('⏳ Showing loading screen - not initialized')
+    return <LoadingScreen message="Initializing..." />
+  }
   
   if (!isAuthenticated) {
+    console.log('🔄 Redirecting to login - not authenticated')
     return <Navigate to="/login" replace />
   }
   
-  return <>{children}</>
+  console.log('✅ Showing protected content - authenticated')
+  return (
+    <ErrorBoundary>
+      {children}
+    </ErrorBoundary>
+  )
 }
 
 function App() {
@@ -39,16 +58,17 @@ function App() {
   }, [checkAuth])
 
   return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Layout />
-          </ProtectedRoute>
-        }
-      >
+    <ErrorBoundary>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
+          }
+        >
         <Route index element={<Dashboard />} />
         <Route path="customers/*" element={<CustomerIntelligence />} />
         <Route path="campaigns/*" element={<CampaignCenter />} />
@@ -67,7 +87,8 @@ function App() {
         <Route path="voice-of-customer/*" element={<VoiceOfCustomer />} />
         <Route path="admin/*" element={<AdminCenter />} />
       </Route>
-    </Routes>
+      </Routes>
+    </ErrorBoundary>
   )
 }
 

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBM AI CRM - Enterprise Customer Relationship Management</title>
+    <style>
+        /* Tailwind CSS Reset and Core Styles */
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::before,::after{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif}body{margin:0;line-height:inherit;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#f9fafb;color:#111827}
+        
+        /* Layout Classes */
+        .min-h-screen{min-height:100vh}.flex{display:flex}.flex-1{flex:1 1 0%}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.space-x-3>:not([hidden])~:not([hidden]){margin-right:.75rem}.space-y-6>:not([hidden])~:not([hidden]){margin-top:1.5rem}.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}
+        
+        /* Colors and Backgrounds */
+        .bg-gray-50{background-color:#f9fafb}.bg-white{background-color:#fff}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.from-blue-600{--tw-gradient-from:#2563eb;--tw-gradient-to:rgb(37 99 235 / 0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-purple-600{--tw-gradient-to:rgb(147 51 234 / 0);--tw-gradient-stops:var(--tw-gradient-from),#9333ea,var(--tw-gradient-to)}.to-pink-600{--tw-gradient-to:#db2777}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.to-purple-600{--tw-gradient-to:#9333ea}
+        
+        /* Text */
+        .text-3xl{font-size:1.875rem;line-height:2.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.font-medium{font-weight:500}.text-center{text-align:center}.text-gray-900{color:#111827}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-white{color:#fff}.text-blue-600{color:#2563eb}
+        
+        /* Spacing */
+        .w-full{width:100%}.w-16{width:4rem}.w-12{width:3rem}.w-6{width:1.5rem}.w-4{width:1rem}.h-16{height:4rem}.h-12{height:3rem}.h-6{height:1.5rem}.h-4{height:1rem}.max-w-md{max-width:28rem}.p-8{padding:2rem}.p-4{padding:1rem}.p-3{padding:.75rem}.p-2{padding:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.mb-8{margin-bottom:2rem}.mb-4{margin-bottom:1rem}.mb-2{margin-bottom:.5rem}.mt-6{margin-top:1.5rem}.mt-2{margin-top:.5rem}.pl-10{padding-left:2.5rem}.pr-3{padding-right:.75rem}
+        
+        /* Borders and Radius */
+        .rounded-xl{border-radius:.75rem}.rounded-lg{border-radius:.5rem}.border{border-width:1px}.border-gray-300{border-color:#d1d5db}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-blue-500:focus{--tw-ring-color:#3b82f6}.focus\:border-transparent:focus{border-color:transparent}
+        
+        /* Effects */
+        .shadow-2xl{box-shadow:0 25px 50px -12px rgb(0 0 0 / .25)}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.hover\:from-blue-700:hover{--tw-gradient-from:#1d4ed8}.hover\:to-purple-700:hover{--tw-gradient-to:#7e22ce}.disabled\:opacity-50:disabled{opacity:.5}.disabled\:cursor-not-allowed:disabled{cursor:not-allowed}
+        
+        /* Position */
+        .relative{position:relative}.absolute{position:absolute}.inset-y-0{top:0;bottom:0}.left-0{left:0}.flex{display:flex}.items-center{align-items:center}.pointer-events-none{pointer-events:none}.pl-3{padding-left:.75rem}
+        
+        /* Custom animations */
+        @keyframes fadeIn{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+        .animate-fade-in{animation:fadeIn 0.6s ease-out}
+        
+        /* Success/Error states */
+        .text-green-600{color:#059669}.text-red-600{color:#dc2626}.bg-green-50{background-color:#f0fdf4}.bg-red-50{background-color:#fef2f2}.border-green-200{border-color:#bbf7d0}.border-red-200{border-color:#fecaca}.rounded{border-radius:.25rem}
+        
+        /* Demo info box */
+        .demo-info{background-color:#f3f4f6;color:#6b7280;padding:1rem;border-radius:.5rem;margin-top:1.5rem;text-align:center;font-size:.875rem}
+        
+        /* Feature grid */
+        .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem}
+        .feature-card{background:white;border-radius:.5rem;padding:1.5rem;box-shadow:0 1px 3px rgb(0 0 0 / .1);border:1px solid #e5e7eb;transition:all .2s ease}
+        .feature-card:hover{box-shadow:0 4px 6px rgb(0 0 0 / .1);transform:translateY(-2px)}
+        .feature-icon{width:3rem;height:3rem;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:.5rem;display:flex;align-items:center;justify-content:center;color:white;margin-bottom:1rem}
+        
+        /* Button styles */
+        .btn-primary{background:linear-gradient(135deg,#667eea,#764ba2);color:white;border:none;padding:.75rem 1rem;border-radius:.5rem;font-weight:600;cursor:pointer;transition:all .2s ease;width:100%;font-size:1rem}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgb(102 126 234 / .4)}
+        .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+        
+        /* Input styles */
+        .input-field{width:100%;padding:.75rem;padding-left:2.5rem;border:2px solid #e5e7eb;border-radius:.5rem;font-size:1rem;transition:border-color .2s ease}
+        .input-field:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgb(59 130 246 / .1)}
+        
+        /* Icons */
+        .icon{width:1.25rem;height:1.25rem;fill:currentColor}
+        .icon-lg{width:2rem;height:2rem}
+        
+        /* Status indicators */
+        .status-indicator{display:inline-flex;align-items:center;padding:.25rem .75rem;border-radius:9999px;font-size:.75rem;font-weight:500}
+        .status-online{background-color:#dcfce7;color:#166534}
+        .status-offline{background-color:#fee2e2;color:#991b1b}
+        
+        /* Results display */
+        .result-card{background:white;border-radius:.75rem;padding:1.5rem;margin-top:1.5rem;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgb(0 0 0 / .1)}
+        .result-success{border-color:#bbf7d0;background-color:#f0fdf4}
+        .result-error{border-color:#fecaca;background-color:#fef2f2}
+        
+        /* Layout containers */
+        .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+        .card{background:white;border-radius:.75rem;padding:2rem;box-shadow:0 4px 6px rgb(0 0 0 / .05);border:1px solid #e5e7eb}
+        
+        /* Responsive */
+        @media (max-width: 768px){
+            .feature-grid{grid-template-columns:1fr}
+            .card{padding:1.5rem}
+            .text-3xl{font-size:1.5rem;line-height:2rem}
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <!-- Login Card -->
+            <div class="card animate-fade-in">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="icon-lg text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-900">SBM AI CRM</h1>
+                    <p class="text-gray-600 mt-2">Enterprise Customer Intelligence Platform</p>
+                </div>
+
+                <!-- Backend Status -->
+                <div id="backendStatus" class="status-indicator mb-4"></div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="icon text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            <input type="text" id="username" class="input-field" value="admin" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="icon text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                                </svg>
+                            </div>
+                            <input type="password" id="password" class="input-field" value="admin123" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="loginBtn" class="btn-primary">
+                        Sign In to SBM AI CRM
+                    </button>
+                </form>
+
+                <!-- Demo Info -->
+                <div class="demo-info">
+                    <strong>🎯 Demo Credentials</strong><br>
+                    Username: admin | Password: admin123<br>
+                    <small>Access all 22 AI engines and enterprise features</small>
+                </div>
+
+                <!-- Results -->
+                <div id="results"></div>
+            </div>
+
+            <!-- Features Preview -->
+            <div id="featuresPreview" class="mt-8" style="display:none;">
+                <div class="card">
+                    <h2 class="text-xl font-semibold text-white mb-4">🎉 Welcome to SBM AI CRM!</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🧠</div>
+                            <h3 class="font-semibold">22 AI Engines</h3>
+                            <p class="text-sm text-gray-600">Advanced analytics and intelligence</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">👥</div>
+                            <h3 class="font-semibold">Customer Intelligence</h3>
+                            <p class="text-sm text-gray-600">360° customer profiles and segmentation</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="font-semibold">Real-time Analytics</h3>
+                            <p class="text-sm text-gray-600">Live dashboards and insights</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3 class="font-semibold">Campaign Optimization</h3>
+                            <p class="text-sm text-gray-600">AI-powered ROI prediction</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🏪</div>
+                            <h3 class="font-semibold">Mall Operations</h3>
+                            <p class="text-sm text-gray-600">Store performance and traffic analysis</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🇨🇳</div>
+                            <h3 class="font-semibold">Chinese Market</h3>
+                            <p class="text-sm text-gray-600">WeChat/Alipay integration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Backend status check
+        async function checkBackend() {
+            const statusEl = document.getElementById('backendStatus');
+            try {
+                const response = await fetch('http://localhost:8080/');
+                if (response.ok) {
+                    const data = await response.json();
+                    statusEl.className = 'status-indicator status-online mb-4 w-full';
+                    statusEl.innerHTML = `✅ Backend Online: ${data.engines.total} AI Engines Ready`;
+                } else {
+                    throw new Error('Backend offline');
+                }
+            } catch (error) {
+                statusEl.className = 'status-indicator status-offline mb-4 w-full';
+                statusEl.innerHTML = '❌ Backend Offline - Please start backend server';
+            }
+        }
+
+        // Login function
+        async function login(username, password) {
+            const resultsEl = document.getElementById('results');
+            const loginBtn = document.getElementById('loginBtn');
+            const featuresEl = document.getElementById('featuresPreview');
+            
+            loginBtn.textContent = 'Authenticating...';
+            loginBtn.disabled = true;
+            
+            try {
+                const response = await fetch('http://localhost:8080/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    resultsEl.innerHTML = `
+                        <div class="result-card result-success">
+                            <h3 class="font-semibold text-green-600 mb-3">🎉 Authentication Successful!</h3>
+                            <div class="space-y-2 text-sm">
+                                <p><strong>Welcome:</strong> ${data.user_info.username}</p>
+                                <p><strong>Role:</strong> ${data.user_info.roles.join(', ')}</p>
+                                <p><strong>Permissions:</strong> ${data.user_info.permissions.length} granted</p>
+                                <p><strong>Token:</strong> ${data.access_token.substring(0, 30)}...</p>
+                                <p><strong>Session ID:</strong> ${data.user_info.session_id}</p>
+                            </div>
+                            <div class="mt-4 p-3 bg-white rounded border">
+                                <h4 class="font-medium text-gray-900 mb-2">🚀 Available Features:</h4>
+                                <ul class="text-xs space-y-1 text-gray-700">
+                                    <li>• Customer Intelligence & 360° Profiles</li>
+                                    <li>• Campaign Management with ROI Prediction</li>
+                                    <li>• ML-based Customer Segmentation</li>
+                                    <li>• Real-time Analytics Dashboard</li>
+                                    <li>• AI Chat Assistant with Voice Input</li>
+                                    <li>• Mall Operations & Camera Intelligence</li>
+                                    <li>• Chinese Market Integration (WeChat/Alipay)</li>
+                                    <li>• Loyalty Management (橙卡/金卡/钻卡会员)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Show features preview
+                    featuresEl.style.display = 'block';
+                    featuresEl.scrollIntoView({ behavior: 'smooth' });
+                    
+                } else {
+                    const errorData = await response.json();
+                    resultsEl.innerHTML = `
+                        <div class="result-card result-error">
+                            <h3 class="font-semibold text-red-600 mb-2">❌ Authentication Failed</h3>
+                            <p class="text-sm text-red-700">${errorData.error?.message || 'Invalid credentials'}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultsEl.innerHTML = `
+                    <div class="result-card result-error">
+                        <h3 class="font-semibold text-red-600 mb-2">❌ Connection Error</h3>
+                        <p class="text-sm text-red-700">Cannot connect to backend. Please ensure it's running on port 8080.</p>
+                    </div>
+                `;
+            }
+            
+            loginBtn.textContent = 'Sign In to SBM AI CRM';
+            loginBtn.disabled = false;
+        }
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            login(username, password);
+        });
+
+        // Check backend status on load
+        checkBackend();
+        
+        // Auto-refresh backend status every 30 seconds
+        setInterval(checkBackend, 30000);
+    </script>
+</body>
+</html>

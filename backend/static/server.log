@@ -1,0 +1,6 @@
+::1 - - [29/Jul/2025 11:28:14] "HEAD / HTTP/1.1" 200 -
+::1 - - [29/Jul/2025 11:28:14] "GET / HTTP/1.1" 200 -
+::1 - - [29/Jul/2025 11:28:15] "GET /assets/index-Cmhwdyl_.js HTTP/1.1" 200 -
+::1 - - [29/Jul/2025 11:28:15] "GET /assets/index-CJZMb0fs.css HTTP/1.1" 200 -
+::1 - - [29/Jul/2025 11:30:02] code 404, message File not found
+::1 - - [29/Jul/2025 11:30:02] "GET /login HTTP/1.1" 404 -

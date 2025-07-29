@@ -84,7 +84,7 @@ export const AIInsightsFeed: React.FC = () => {
       </div>
 
       <div className="space-y-4">
-        {insights?.slice(0, 5).map((insight: any, index: number) => {
+        {Array.isArray(insights) && insights.slice(0, 5).map((insight: any, index: number) => {
           const IconComponent = insightIcons[insight.type as keyof typeof insightIcons] || insightIcons.opportunity
           const colorClasses = insightColors[insight.type as keyof typeof insightColors] || insightColors.opportunity
 
@@ -108,7 +108,7 @@ export const AIInsightsFeed: React.FC = () => {
                     {insight.description}
                   </p>
                   
-                  {insight.metrics && (
+                  {insight.metrics && Array.isArray(insight.metrics) && (
                     <div className="flex flex-wrap gap-2 mb-2">
                       {insight.metrics.map((metric: any, idx: number) => (
                         <span
@@ -132,7 +132,7 @@ export const AIInsightsFeed: React.FC = () => {
                     </div>
                   )}
 
-                  {insight.actions && insight.actions.length > 0 && (
+                  {insight.actions && Array.isArray(insight.actions) && insight.actions.length > 0 && (
                     <div className="mt-3 flex flex-wrap gap-2">
                       {insight.actions.map((action: any, idx: number) => (
                         <Link

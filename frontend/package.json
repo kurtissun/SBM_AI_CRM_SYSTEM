@@ -2,6 +2,7 @@
   "name": "sbm-ai-crm-frontend",
   "version": "1.0.0",
   "description": "SBM AI CRM System - Enterprise Frontend",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^5.17.0",
@@ -27,10 +28,13 @@
   },
   "devDependencies": {
     "@types/chart.js": "^2.9.41",
-    "@vitejs/plugin-react": "^4.2.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
-    "vite": "^5.0.0"
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "vite": "^5.3.1",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1"
   },
   "scripts": {
     "dev": "vite",
