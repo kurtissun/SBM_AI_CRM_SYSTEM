@@ -18,11 +18,11 @@ def main():
     
     # Server configuration
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 4000))
     
     print(f"🌐 Starting server on http://{host}:{port}")
-    print("📚 API Documentation: http://localhost:8000/docs")
-    print("🔧 System Status: http://localhost:8000/api/system/status")
+    print("📚 API Documentation: http://localhost:4000/docs")
+    print("🔧 System Status: http://localhost:4000/api/system/status")
     print("\n🎯 Press CTRL+C to stop the server")
     print("=" * 50)
     

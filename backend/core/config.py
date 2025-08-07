@@ -8,7 +8,7 @@ import yaml
 
 class Settings(BaseSettings):
     # Database
-    DATABASE_URL: str = "postgresql://user:password@localhost/sbm_crm"
+    DATABASE_URL: str = "sqlite:///./sbm_crm.db"
     REDIS_URL: str = "redis://localhost:6379"
     
     # API

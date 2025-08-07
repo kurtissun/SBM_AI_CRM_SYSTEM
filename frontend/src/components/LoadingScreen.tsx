@@ -26,8 +26,12 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-8"
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <Store className="w-10 h-10 text-white" />
+            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <img 
+                src="/SBM_logo.png" 
+                alt="SBM Logo" 
+                className="w-16 h-16 object-contain"
+              />
             </div>
             <h1 className="text-2xl font-bold text-gray-900">SBM AI CRM</h1>
             <p className="text-gray-600 text-sm">Enterprise Customer Intelligence</p>

@@ -4,6 +4,7 @@ import { X, Bell, CheckCircle, AlertTriangle, Info, Settings } from 'lucide-reac
 import { useQuery } from '@tanstack/react-query'
 import { formatDistanceToNow } from 'date-fns'
 import { api } from '@/lib/api'
+import { useTranslation } from '@/contexts/TranslationContext'
 
 interface NotificationPanelProps {
   onClose: () => void
@@ -24,6 +25,7 @@ const notificationColors = {
 }
 
 export const NotificationPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
+  const { t } = useTranslation()
   const { data: notifications, isLoading } = useQuery({
     queryKey: ['notifications'],
     queryFn: () => api.get('/notifications'),
@@ -42,8 +44,8 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({ onClose })
         <div className="flex items-center space-x-3">
           <Bell className="w-5 h-5 text-gray-600" />
           <div>
-            <h2 className="font-semibold text-gray-900">Notifications</h2>
-            <p className="text-xs text-gray-600">Stay updated with your CRM</p>
+            <h2 className="font-semibold text-gray-900">{t('notifications.title')}</h2>
+            <p className="text-xs text-gray-600">{t('notifications.subtitle')}</p>
           </div>
         </div>
         <div className="flex items-center space-x-2">
@@ -112,9 +114,9 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({ onClose })
             {(!notifications || notifications.length === 0) && (
               <div className="p-8 text-center">
                 <Bell className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500 mb-2">No notifications</p>
+                <p className="text-gray-500 mb-2">{t('notifications.noNotifications')}</p>
                 <p className="text-sm text-gray-400">
-                  You're all caught up!
+                  {t('notifications.allCaughtUp')}
                 </p>
               </div>
             )}

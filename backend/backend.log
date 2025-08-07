@@ -1,0 +1,66 @@
+OpenAI API key not found - using fallback responses
+2025-07-31 10:42:24,896 - api.main - WARNING - ⚠️ Failed to import customers: attempted relative import beyond top-level package
+2025-07-31 10:42:24,897 - api.main - WARNING - ⚠️ Failed to import campaigns: attempted relative import beyond top-level package
+2025-07-31 10:42:24,898 - api.main - WARNING - ⚠️ Failed to import analytics: attempted relative import beyond top-level package
+2025-07-31 10:42:24,899 - api.main - WARNING - ⚠️ Failed to import reports: attempted relative import beyond top-level package
+2025-07-31 10:42:24,900 - api.main - WARNING - ⚠️ Failed to import chat: attempted relative import beyond top-level package
+2025-07-31 10:42:24,901 - api.main - WARNING - ⚠️ Failed to import sbm_config: attempted relative import beyond top-level package
+2025-07-31 10:42:24,901 - api.main - WARNING - ⚠️ Failed to import journey: attempted relative import beyond top-level package
+2025-07-31 10:42:24,902 - api.main - WARNING - ⚠️ Failed to import automation: attempted relative import beyond top-level package
+2025-07-31 10:42:24,903 - api.main - WARNING - ⚠️ Failed to import scoring: attempted relative import beyond top-level package
+2025-07-31 10:42:24,904 - api.main - WARNING - ⚠️ Failed to import attribution: attempted relative import beyond top-level package
+2025-07-31 10:42:24,905 - api.main - WARNING - ⚠️ Failed to import notifications: attempted relative import beyond top-level package
+2025-07-31 10:42:24,906 - api.main - WARNING - ⚠️ Failed to import dynamic_segmentation: attempted relative import beyond top-level package
+2025-07-31 10:42:24,907 - api.main - WARNING - ⚠️ Failed to import behavioral_analytics: attempted relative import beyond top-level package
+2025-07-31 10:42:24,907 - api.main - WARNING - ⚠️ Failed to import webhooks: attempted relative import beyond top-level package
+2025-07-31 10:42:24,908 - api.main - WARNING - ⚠️ Failed to import charts: attempted relative import beyond top-level package
+2025-07-31 10:42:24,909 - api.main - WARNING - ⚠️ Failed to import personalization: attempted relative import beyond top-level package
+2025-07-31 10:42:24,909 - api.main - WARNING - ⚠️ Failed to import campaign_advisor: attempted relative import beyond top-level package
+2025-07-31 10:42:24,917 - api.main - INFO - ✅ Imported user_settings endpoint
+2025-07-31 10:42:24,925 - api.main - INFO - ✅ Imported data_import endpoint
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Customers not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Campaigns not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Analytics not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Reports not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module AI Chat Assistant not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module SBM Configuration not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Customer Journey & Lifecycle not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Marketing Automation not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Lead Scoring & Qualification not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Revenue Attribution not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Real-time Notifications & Alerts not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Advanced Dynamic Segmentation not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Behavioral Analytics not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Webhook Integration System not available or missing router
+2025-07-31 10:42:24,925 - api.main - WARNING - ⚠️ Module Custom Reporting & Chart Engine not available or missing router
+2025-07-31 10:42:24,926 - api.main - WARNING - ⚠️ Module Hyper-Personalization not available or missing router
+2025-07-31 10:42:24,926 - api.main - WARNING - ⚠️ Module Campaign Intelligence not available or missing router
+2025-07-31 10:42:24,930 - api.main - INFO - ✅ Included User Settings router at /api/user
+2025-07-31 10:42:24,934 - api.main - INFO - ✅ Included Data Import router at /api/import
+2025-07-31 10:42:24,934 - api.main - INFO - 🎯 Successfully included 2/19 comprehensive endpoint routers
+INFO:     Started server process [5656]
+INFO:     Waiting for application startup.
+2025-07-31 10:42:24,940 - api.main - INFO - 🚀 SBM AI CRM Backend Enterprise Edition starting up...
+2025-07-31 10:42:24,948 - api.main - INFO - ✅ Database initialized
+2025-07-31 10:42:24,948 - api.main - INFO - ✅ AI models loading skipped for compatibility
+2025-07-31 10:42:24,949 - api.main - ERROR - ❌ Engine initialization failed: No inspection system is available for object of type <class 'str'>
+2025-07-31 10:42:24,949 - api.main - WARNING - ⚠️  Running in limited mode
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+2025-07-31 10:42:38,182 - api.main - INFO - 📨 GET / - Client: 127.0.0.1
+2025-07-31 10:42:38,186 - api.main - INFO - ✅ GET / - 200 - 0.003s
+🚀 SBM AI CRM Backend - Quick Launch
+==================================================
+🌐 Starting server on http://0.0.0.0:4000
+📚 API Documentation: http://localhost:4000/docs
+🔧 System Status: http://localhost:4000/api/system/status
+
+🎯 Press CTRL+C to stop the server
+==================================================
+INFO:     127.0.0.1:55653 - "GET / HTTP/1.1" 200 OK
+2025-07-31 10:42:38,681 - api.main - INFO - 📨 GET /favicon.ico - Client: 127.0.0.1
+2025-07-31 10:42:38,682 - api.main - INFO - ✅ GET /favicon.ico - 404 - 0.001s
+INFO:     127.0.0.1:55653 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-07-31 10:42:56,023 - api.main - INFO - 📨 GET / - Client: 127.0.0.1
+2025-07-31 10:42:56,024 - api.main - INFO - ✅ GET / - 200 - 0.001s
+INFO:     127.0.0.1:55655 - "GET / HTTP/1.1" 200 OK

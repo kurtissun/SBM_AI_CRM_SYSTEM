@@ -4,31 +4,60 @@ import { Search, X, Clock, Users, Target, BarChart3, ArrowRight } from 'lucide-r
 import { useQuery } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { api } from '@/lib/api'
+import { useTranslation } from '@/contexts/TranslationContext'
 
 interface GlobalSearchProps {
   onClose: () => void
 }
 
-const searchCategories = [
-  { id: 'customers', label: 'Customers', icon: Users, color: 'blue' },
-  { id: 'campaigns', label: 'Campaigns', icon: Target, color: 'purple' },
-  { id: 'reports', label: 'Reports', icon: BarChart3, color: 'green' },
+const getSearchCategories = (t: (key: string) => string) => [
+  { id: 'customers', label: t('search.customers.category'), icon: Users, color: 'blue' },
+  { id: 'campaigns', label: t('search.campaigns.category'), icon: Target, color: 'purple' },
+  { id: 'reports', label: t('search.reports.category'), icon: BarChart3, color: 'green' },
 ]
 
 export const GlobalSearch: React.FC<GlobalSearchProps> = ({ onClose }) => {
+  const { t } = useTranslation()
   const [query, setQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const navigate = useNavigate()
+  const searchCategories = getSearchCategories(t)
 
   const { data: searchResults, isLoading } = useQuery({
     queryKey: ['search', query, selectedCategory],
-    queryFn: () => api.get(`/search?q=${encodeURIComponent(query)}&category=${selectedCategory}`),
+    queryFn: async () => {
+      // Mock search results for demo
+      await new Promise(resolve => setTimeout(resolve, 500)) // Simulate API delay
+      
+      const mockResults = [
+        { id: '1', title: 'John Smith - Premium Customer', description: 'High-value customer, VIP status', category: 'customers', link: '/customers/1' },
+        { id: '2', title: 'Summer Sale Campaign', description: 'Active campaign with 23% ROI', category: 'campaigns', link: '/campaigns/2' },
+        { id: '3', title: 'Q4 Revenue Report', description: 'Quarterly performance analysis', category: 'reports', link: '/reports/3' },
+        { id: '4', title: 'Sarah Johnson - New Lead', description: 'Recently engaged prospect', category: 'customers', link: '/customers/4' },
+        { id: '5', title: 'Email Marketing Campaign', description: 'Automated email sequence', category: 'campaigns', link: '/campaigns/5' }
+      ]
+      
+      return mockResults.filter(result => 
+        result.title.toLowerCase().includes(query.toLowerCase()) ||
+        result.description.toLowerCase().includes(query.toLowerCase())
+      ).filter(result => 
+        selectedCategory === 'all' || result.category === selectedCategory
+      )
+    },
     enabled: query.length > 2,
   })
 
   const { data: recentSearches } = useQuery({
     queryKey: ['recent-searches'],
-    queryFn: () => api.get('/search/recent'),
+    queryFn: async () => {
+      // Mock recent searches
+      return [
+        { id: '1', query: 'VIP customers' },
+        { id: '2', query: 'Campaign performance' },
+        { id: '3', query: 'Revenue analytics' },
+        { id: '4', query: 'Customer segments' }
+      ]
+    },
   })
 
   const handleResultClick = (result: any) => {
@@ -77,7 +106,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ onClose }) => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Search customers, campaigns, reports..."
+              placeholder={t('search.customers')}
               className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
               autoFocus
             />
@@ -99,7 +128,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ onClose }) => {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              All
+              {t('search.all')}
             </button>
             {searchCategories.map((category) => (
               <button
@@ -163,15 +192,15 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ onClose }) => {
             ) : (
               <div className="p-8 text-center">
                 <Search className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">No results found for "{query}"</p>
-                <p className="text-sm text-gray-400 mt-1">Try a different search term</p>
+                <p className="text-gray-500">{t('search.noResults')} "{query}"</p>
+                <p className="text-sm text-gray-400 mt-1">{t('search.tryDifferent')}</p>
               </div>
             )
           ) : (
             /* Recent Searches */
             <div className="py-2">
               <div className="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wide">
-                Recent Searches
+                {t('search.recent')}
               </div>
               {recentSearches?.map((search: any) => (
                 <button
@@ -186,8 +215,8 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ onClose }) => {
               
               {(!recentSearches || recentSearches.length === 0) && (
                 <div className="px-4 py-8 text-center">
-                  <p className="text-gray-500">Start typing to search</p>
-                  <p className="text-sm text-gray-400 mt-1">Search across customers, campaigns, and reports</p>
+                  <p className="text-gray-500">{t('search.startTyping')}</p>
+                  <p className="text-sm text-gray-400 mt-1">{t('search.searchAcross')}</p>
                 </div>
               )}
             </div>
@@ -198,10 +227,10 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ onClose }) => {
         <div className="px-4 py-3 border-t border-gray-200 bg-gray-50 rounded-b-xl">
           <div className="flex items-center justify-between text-xs text-gray-500">
             <div className="flex items-center space-x-4">
-              <span>Press <kbd className="px-1 py-0.5 bg-white border border-gray-300 rounded">↵</kbd> to select</span>
-              <span>Press <kbd className="px-1 py-0.5 bg-white border border-gray-300 rounded">Esc</kbd> to close</span>
+              <span>{t('search.pressEnter')} <kbd className="px-1 py-0.5 bg-white border border-gray-300 rounded">↵</kbd> {t('search.toSelect')}</span>
+              <span>{t('search.pressEsc')} <kbd className="px-1 py-0.5 bg-white border border-gray-300 rounded">Esc</kbd> {t('search.toClose')}</span>
             </div>
-            <span>Powered by AI Search</span>
+            <span>{t('search.poweredBy')}</span>
           </div>
         </div>
       </motion.div>

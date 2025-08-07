@@ -5,6 +5,9 @@ import { Layout } from './components/Layout'
 import { LoginPage } from './pages/auth/LoginPage'
 import { LoadingScreen } from './components/LoadingScreen'
 import { ErrorBoundary } from './components/ErrorBoundary'
+import { TranslationProvider } from './contexts/TranslationContext'
+import { ThemeProvider } from './contexts/ThemeContext'
+import { AlertProvider } from './components/providers/AlertProvider'
 import { Dashboard } from './pages/Dashboard'
 import { CustomerIntelligence } from './pages/CustomerIntelligence'
 import { CampaignCenter } from './pages/CampaignCenter'
@@ -21,7 +24,10 @@ import { LoyaltyManagement } from './pages/LoyaltyManagement'
 import { RetailIntelligence } from './pages/RetailIntelligence'
 import { EconomicSimulator } from './pages/EconomicSimulator'
 import { VoiceOfCustomer } from './pages/VoiceOfCustomer'
-import { AdminCenter } from './pages/AdminCenter'
+import { Settings } from './pages/Settings'
+import CreateCampaign from './pages/CreateCampaign'
+import CampaignIntelligence from './pages/CampaignIntelligence'
+import CalendarPage from './pages/CalendarPage'
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated, isInitialized } = useAuthStore(state => ({
@@ -58,20 +64,26 @@ function App() {
   }, [checkAuth])
 
   return (
-    <ErrorBoundary>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Layout />
-            </ProtectedRoute>
-          }
-        >
+    <TranslationProvider>
+      <ThemeProvider>
+        <AlertProvider>
+          <ErrorBoundary>
+          <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Layout />
+              </ProtectedRoute>
+            }
+          >
         <Route index element={<Dashboard />} />
         <Route path="customers/*" element={<CustomerIntelligence />} />
-        <Route path="campaigns/*" element={<CampaignCenter />} />
+        <Route path="campaigns" element={<CampaignCenter />} />
+        <Route path="campaigns/new" element={<CreateCampaign />} />
+        <Route path="campaigns/intelligence" element={<CampaignIntelligence />} />
+        <Route path="calendar" element={<CalendarPage />} />
         <Route path="segmentation/*" element={<SegmentationStudio />} />
         <Route path="analytics/*" element={<AnalyticsCenter />} />
         <Route path="journeys/*" element={<JourneyAutomation />} />
@@ -85,10 +97,14 @@ function App() {
         <Route path="retail-intelligence/*" element={<RetailIntelligence />} />
         <Route path="simulator/*" element={<EconomicSimulator />} />
         <Route path="voice-of-customer/*" element={<VoiceOfCustomer />} />
-        <Route path="admin/*" element={<AdminCenter />} />
-      </Route>
-      </Routes>
-    </ErrorBoundary>
+        <Route path="admin/*" element={<Settings />} />
+        <Route path="settings/*" element={<Settings />} />
+        </Route>
+          </Routes>
+          </ErrorBoundary>
+        </AlertProvider>
+      </ThemeProvider>
+    </TranslationProvider>
   )
 }
 

@@ -3,12 +3,18 @@ import { Line } from 'react-chartjs-2'
 import { useQuery } from '@tanstack/react-query'
 import { TrendingUp, DollarSign } from 'lucide-react'
 import { api } from '@/lib/api'
+import { useTheme } from '@/contexts/ThemeContext'
+import { getChartColors } from '@/components/charts/ChartLibrary'
 
 interface RevenueChartProps {
   period: string
 }
 
 export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+  const colors = getChartColors(isDark)
+  
   const { data: revenueData, isLoading } = useQuery({
     queryKey: ['revenue-chart', period],
     queryFn: () => api.get(`/analytics/revenue?period=${period}`),
@@ -20,8 +26,8 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
       {
         label: 'Revenue',
         data: revenueData?.revenue || [],
-        borderColor: 'rgb(59, 130, 246)',
-        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+        borderColor: colors.primarySolid[0],
+        backgroundColor: colors.primary[0].replace('0.8', '0.1'),
         borderWidth: 2,
         fill: true,
         tension: 0.4,
@@ -29,8 +35,8 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
       {
         label: 'Predicted',
         data: revenueData?.predicted || [],
-        borderColor: 'rgb(168, 85, 247)',
-        backgroundColor: 'rgba(168, 85, 247, 0.1)',
+        borderColor: colors.primarySolid[3],
+        backgroundColor: colors.primary[3].replace('0.8', '0.1'),
         borderWidth: 2,
         borderDash: [5, 5],
         fill: false,
@@ -45,6 +51,12 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
     plugins: {
       legend: {
         position: 'top' as const,
+        labels: {
+          color: colors.textColor,
+          font: {
+            size: 12,
+          }
+        }
       },
       tooltip: {
         mode: 'index' as const,
@@ -62,13 +74,17 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
         grid: {
           display: false,
         },
+        ticks: {
+          color: colors.textColor,
+        }
       },
       y: {
         display: true,
         grid: {
-          color: 'rgba(0, 0, 0, 0.1)',
+          color: colors.gridColor,
         },
         ticks: {
+          color: colors.textColor,
           callback: function(value: any) {
             return '¥' + value.toLocaleString()
           },
@@ -84,32 +100,47 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
 
   if (isLoading) {
     return (
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <div className="animate-pulse">
-          <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
-          <div className="h-64 bg-gray-200 rounded"></div>
+      <div className="gradient-border">
+        <div className="gradient-border-content seamless-container rounded-xl shadow-lg p-6">
+          <div className="animate-pulse">
+            <div className={`h-4 rounded w-1/4 mb-4 ${
+              isDark ? 'bg-gray-600' : 'bg-gray-200'
+            }`}></div>
+            <div className={`h-64 rounded ${
+              isDark ? 'bg-gray-600' : 'bg-gray-200'
+            }`}></div>
+          </div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="gradient-border">
+      <div className="gradient-border-content seamless-container rounded-xl shadow-lg p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-lg font-semibold text-gray-900">Revenue Analytics</h2>
-          <p className="text-sm text-gray-600">Track revenue performance and predictions</p>
+          <h2 className={`text-lg font-semibold ${
+            isDark ? 'text-gray-100' : 'text-gray-900'
+          }`}>Revenue Analytics</h2>
+          <p className={`text-sm ${
+            isDark ? 'text-gray-400' : 'text-gray-600'
+          }`}>Track revenue performance and predictions</p>
         </div>
         <div className="flex items-center space-x-4">
           <div className="flex items-center">
             <DollarSign className="w-5 h-5 text-green-600 mr-2" />
-            <span className="text-sm font-medium text-gray-700">
+            <span className={`text-sm font-medium ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               Total: ¥{revenueData?.total?.toLocaleString() || '0'}
             </span>
           </div>
           <div className="flex items-center">
             <TrendingUp className="w-5 h-5 text-blue-600 mr-2" />
-            <span className="text-sm font-medium text-gray-700">
+            <span className={`text-sm font-medium ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               Growth: {revenueData?.growth || '0'}%
             </span>
           </div>
@@ -117,6 +148,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
       </div>
       <div className="h-64">
         <Line data={chartData} options={options} />
+      </div>
       </div>
     </div>
   )

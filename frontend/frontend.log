@@ -1,0 +1,464 @@
+
+> sbm-ai-crm-frontend@1.0.0 dev
+> vite
+
+
+  VITE v5.4.19  ready in 197 ms
+
+  ➜  Local:   http://localhost:4000/
+10:44:03 AM [vite] warning: Duplicate key "alert.campaignCreating" in object literal
+743|      'alert.rewardAdding': 'Adding new reward...',
+744|      'alert.rewardAdded': 'New reward added successfully!',
+745|      'alert.campaignCreating': 'Creating campaign...',
+   |      ^
+746|      'alert.campaignCreated': 'Campaign created successfully!',
+747|      'alert.feedsRefreshing': 'Refreshing camera feeds...',
+
+  Plugin: vite:esbuild
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/contexts/TranslationContext.tsx
+10:44:03 AM [vite] warning: Duplicate key "alert.campaignCreated" in object literal
+744|      'alert.rewardAdded': 'New reward added successfully!',
+745|      'alert.campaignCreating': 'Creating campaign...',
+746|      'alert.campaignCreated': 'Campaign created successfully!',
+   |      ^
+747|      'alert.feedsRefreshing': 'Refreshing camera feeds...',
+748|      'alert.feedsRefreshed': 'All camera feeds refreshed!',
+
+  Plugin: vite:esbuild
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/contexts/TranslationContext.tsx
+10:44:03 AM [vite] warning: Duplicate key "campaign.attribution" in object literal
+781|      'campaign.performanceOverview': 'Performance Overview',
+782|      'campaign.performance': 'Performance',
+783|      'campaign.attribution': 'Attribution',
+   |      ^
+784|      'campaign.funnelAnalysis': 'Funnel Analysis',
+785|      'campaign.cohortAnalysis': 'Cohort Analysis',
+
+  Plugin: vite:esbuild
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/contexts/TranslationContext.tsx
+10:44:03 AM [vite] warning: Duplicate key "alert.campaignCreating" in object literal
+1671|      'alert.rewardAdding': '正在添加新奖励...',
+1672|      'alert.rewardAdded': '新奖励添加成功！',
+1673|      'alert.campaignCreating': '正在创建营销活动...',
+   |      ^
+1674|      'alert.campaignCreated': '营销活动创建成功！',
+1675|      'alert.feedsRefreshing': '正在刷新摄像头数据源...',
+
+  Plugin: vite:esbuild
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/contexts/TranslationContext.tsx
+10:44:03 AM [vite] warning: Duplicate key "alert.campaignCreated" in object literal
+1672|      'alert.rewardAdded': '新奖励添加成功！',
+1673|      'alert.campaignCreating': '正在创建营销活动...',
+1674|      'alert.campaignCreated': '营销活动创建成功！',
+   |      ^
+1675|      'alert.feedsRefreshing': '正在刷新摄像头数据源...',
+1676|      'alert.feedsRefreshed': '所有摄像头数据源已刷新！',
+
+  Plugin: vite:esbuild
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/contexts/TranslationContext.tsx
+10:44:03 AM [vite] warning: Duplicate key "campaign.attribution" in object literal
+1709|      'campaign.performanceOverview': '性能概览',
+1710|      'campaign.performance': '性能分析',
+1711|      'campaign.attribution': '归因分析',
+   |      ^
+1712|      'campaign.funnelAnalysis': '漏斗分析',
+1713|      'campaign.cohortAnalysis': '队列分析',
+
+  Plugin: vite:esbuild
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/contexts/TranslationContext.tsx
+10:54:57 AM [vite] hmr update /src/pages/CampaignCenter.tsx, /src/index.css
+10:56:25 AM [vite] hmr update /src/index.css
+10:56:36 AM [vite] page reload tailwind.config.js
+10:56:57 AM [vite] page reload index.html
+10:58:40 AM [vite] hmr update /src/pages/CustomerIntelligence.tsx, /src/index.css
+11:00:27 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx, /src/pages/CampaignCenter.tsx, /src/pages/CreateCampaign.tsx, /src/pages/CalendarPage.tsx
+11:00:32 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx, /src/pages/CampaignCenter.tsx, /src/pages/CreateCampaign.tsx, /src/pages/CalendarPage.tsx
+11:00:42 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx, /src/pages/CampaignCenter.tsx, /src/pages/CreateCampaign.tsx, /src/pages/CalendarPage.tsx
+11:00:57 AM [vite] hmr update /src/pages/CampaignCenter.tsx, /src/index.css
+11:01:21 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:01:27 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:01:43 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:01:54 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:02:00 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:02:08 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:02:08 AM [vite] Internal server error: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/components/Layout.tsx: Unexpected character '⌘'. (178:16)
+
+  176 |                   : 'bg-white border-gray-300'
+  177 |               }`}
+> 178 |                 ⌘K
+      |                 ^
+  179 |               </kbd>
+  180 |             </button>
+  181 |           </div>
+  Plugin: vite:react-babel
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/components/Layout.tsx:178:16
+  176|                    : 'bg-white border-gray-300'
+  177|                }`}
+  178|                  ⌘K
+     |                  ^
+  179|                </kbd>
+  180|              </button>
+      at constructor (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+      at TypeScriptParserMixin.raise (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6627:19)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6334:16)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4827:11)
+      at TypeScriptParserMixin.getTokenFromCode (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10004:11)
+      at TypeScriptParserMixin.nextToken (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:5810:10)
+      at TypeScriptParserMixin.next (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:5720:10)
+      at TypeScriptParserMixin.eat (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:5724:12)
+      at TypeScriptParserMixin.expect (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6926:15)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4667:10)
+      at TypeScriptParserMixin.jsxParseAttributeValue (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4634:21)
+      at TypeScriptParserMixin.jsxParseAttribute (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4683:38)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4697:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10062:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4692:17)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4716:33)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+      at /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9790:39
+      at TypeScriptParserMixin.tryParse (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6935:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9790:18)
+      at /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10795:39
+      at TypeScriptParserMixin.allowInAnd (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10795:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12494:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11674:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9801:20)
+11:02:15 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:03:00 AM [vite] hmr update /src/components/AIChat.tsx, /src/index.css
+11:03:16 AM [vite] hmr update /src/components/AIChat.tsx, /src/index.css
+11:03:41 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:03:41 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:03:41 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx
+11:03:52 AM [vite] hmr update /src/index.css
+11:04:44 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:06:33 AM [vite] hmr update /src/index.css
+11:06:41 AM [vite] hmr update /src/pages/CustomerIntelligence.tsx, /src/index.css
+11:09:16 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:09:25 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:09:36 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:09:50 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:11:50 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:12:04 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:12:13 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:12:29 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:12:37 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:12:48 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:13:04 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:13:26 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:13:46 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:14:07 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:14:30 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:14:44 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:15:01 AM [vite] page reload src/components/charts/ChartLibrary.tsx
+11:15:23 AM [vite] page reload src/components/dashboard/RevenueChart.tsx
+11:15:35 AM [vite] page reload src/components/dashboard/RevenueChart.tsx
+11:15:45 AM [vite] page reload src/components/dashboard/RevenueChart.tsx
+11:16:02 AM [vite] page reload src/components/dashboard/RevenueChart.tsx
+11:16:58 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:17:09 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:17:21 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:17:31 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:17:53 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:18:12 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:18:27 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:19:46 AM [vite] hmr update /src/index.css
+11:19:59 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:19:59 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:19:59 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:20:00 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:00 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:20:06 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:20:06 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:06 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:20:06 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:06 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:20:14 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:20:14 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:14 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:20:14 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:14 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:20:19 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:20:19 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:19 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:20:19 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:19 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:20:27 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:20:27 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:27 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:20:28 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:28 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:20:45 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:20:45 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:20:45 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:20:57 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:20:57 AM [vite] Internal server error: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/components/charts/ChartLibrary.tsx: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (533:2)
+
+  531 |       </div>
+  532 |     </div>
+> 533 |   </div>
+      |   ^
+  534 |   )
+  535 | }
+  536 |
+  Plugin: vite:react-babel
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/components/charts/ChartLibrary.tsx:533:2
+  531|        </div>
+  532|      </div>
+  533|    </div>
+     |    ^
+  534|    )
+  535|  }
+      at constructor (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+      at TypeScriptParserMixin.raise (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6627:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4772:18)
+      at TypeScriptParserMixin.jsxParseElement (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+      at /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9790:39
+      at TypeScriptParserMixin.tryParse (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6935:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9790:18)
+      at /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10795:39
+      at TypeScriptParserMixin.allowInAnd (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10795:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12494:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11674:28)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9801:20)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10779:23)
+      at /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10775:39
+      at TypeScriptParserMixin.allowInAnd (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12422:16)
+      at TypeScriptParserMixin.parseExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10775:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13142:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12798:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9527:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12747:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13316:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13309:10)
+      at TypeScriptParserMixin.parseBlock (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13297:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12101:24)
+      at TypeScriptParserMixin.parseArrowExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12076:10)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11686:12)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+11:21:11 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:21:11 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:21:11 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:21:22 AM [vite] page reload src/components/dashboard/RevenueChart.tsx
+11:21:34 AM [vite] page reload src/components/dashboard/RevenueChart.tsx
+11:22:57 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:23:03 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:23:20 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:23:34 AM [vite] hmr update /src/index.css
+11:25:08 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:25:09 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:09 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:25:10 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:10 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:25:18 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:25:18 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:18 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:25:19 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:19 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:25:34 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:25:34 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:34 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:25:35 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:35 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:25:41 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:25:41 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:41 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:25:41 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:25:41 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:25:49 AM [vite] hmr update /src/index.css
+11:26:01 AM [vite] hmr update /src/index.css
+11:26:10 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:26:10 AM [vite] Internal server error: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/components/charts/ChartLibrary.tsx: Missing semicolon. (63:1)
+
+  61 |   gridColor: isDark ? 'rgba(75, 85, 99, 0.3)' : 'rgba(0, 0, 0, 0.1)',
+  62 |   textColor: isDark ? '#e5e7eb' : '#374151'
+> 63 | })
+     |  ^
+  64 |
+  65 | // Theme-aware common chart options
+  66 | export const getCommonOptions = (isDark: boolean) => {
+  Plugin: vite:react-babel
+  File: /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/src/components/charts/ChartLibrary.tsx:63:1
+  61 |    gridColor: isDark ? 'rgba(75, 85, 99, 0.3)' : 'rgba(0, 0, 0, 0.1)',
+  62 |    textColor: isDark ? '#e5e7eb' : '#374151'
+  63 |  })
+     |   ^
+  64 |  
+  65 |  // Theme-aware common chart options
+      at constructor (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+      at TypeScriptParserMixin.raise (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6627:19)
+      at TypeScriptParserMixin.semicolon (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:6923:10)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13143:12)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12798:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9527:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12747:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13316:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13309:10)
+      at TypeScriptParserMixin.parseBlock (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13297:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12101:24)
+      at TypeScriptParserMixin.parseArrowExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12076:10)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11686:12)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+      at TypeScriptParserMixin.parseExprAtom (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9801:20)
+      at /Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10795:39
+      at TypeScriptParserMixin.allowInAnd (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12422:16)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10795:17)
+      at TypeScriptParserMixin.parseVar (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13384:91)
+      at TypeScriptParserMixin.parseVarStatement (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13230:10)
+      at TypeScriptParserMixin.parseVarStatement (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9493:31)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12851:23)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9527:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12747:17)
+      at TypeScriptParserMixin.parseExportDeclaration (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13934:17)
+      at TypeScriptParserMixin.parseExportDeclaration (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9652:85)
+      at TypeScriptParserMixin.maybeParseExportDeclaration (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13893:31)
+      at TypeScriptParserMixin.parseExport (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13812:29)
+      at TypeScriptParserMixin.parseExport (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9470:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12878:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:9527:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12625:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:12615:25)
+      at TypeScriptParserMixin.parse (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:14492:10)
+      at TypeScriptParserMixin.parse (/Users/kurtis/SBM_AI_CRM_SYSTEM/frontend/node_modules/@babel/parser/lib/index.js:10144:18)
+11:26:20 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:26:20 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:26:20 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:26:30 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:26:30 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:26:30 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:26:37 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:26:37 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:26:37 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:26:46 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:26:46 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:26:46 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:28:56 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:28:56 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:28:56 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:29:12 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:29:12 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:29:12 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:29:18 AM [vite] hmr update /src/components/charts/ChartLibrary.tsx, /src/index.css
+11:29:18 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:29:18 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:29:36 AM [vite] hmr update /src/pages/Settings.tsx, /src/index.css
+11:29:42 AM [vite] hmr update /src/pages/Settings.tsx, /src/index.css
+11:30:19 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:30:29 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:32:18 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:32:26 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:32:33 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:32:59 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:33:03 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:33:08 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:33:12 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:37:05 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:37:11 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:37:15 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:37:21 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:37:32 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:37:45 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:38:04 AM [vite] hmr update /src/contexts/ThemeContext.tsx, /src/index.css
+11:38:04 AM [vite] hmr invalidate /src/contexts/ThemeContext.tsx Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:38:04 AM [vite] hmr update /src/App.tsx, /src/index.css, /src/pages/Settings.tsx, /src/components/Layout.tsx, /src/pages/Dashboard.tsx, /src/components/charts/ChartLibrary.tsx
+11:38:05 AM [vite] hmr invalidate /src/components/charts/ChartLibrary.tsx Could not Fast Refresh ("generateAIInsightsData" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:38:05 AM [vite] hmr update /src/index.css, /src/pages/Dashboard.tsx
+11:38:11 AM [vite] hmr update /src/index.css
+11:38:19 AM [vite] hmr update /src/index.css
+11:38:39 AM [vite] hmr update /src/index.css
+11:39:19 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:39:25 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:39:38 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:40:06 AM [vite] hmr update /src/index.css
+11:40:44 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:40:50 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:41:02 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:42:07 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:42:25 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:45:52 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:45:58 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:46:04 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:46:09 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:46:15 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:46:21 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:46:27 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:46:41 AM [vite] hmr update /src/pages/Dashboard.tsx, /src/index.css
+11:47:26 AM [vite] hmr update /src/index.css
+11:48:00 AM [vite] hmr update /src/index.css
+11:48:19 AM [vite] hmr update /src/index.css
+11:49:50 AM [vite] page reload index.html
+11:50:09 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:50:15 AM [vite] hmr update /src/components/Layout.tsx, /src/index.css
+11:50:46 AM [vite] hmr update /src/index.css
+11:50:59 AM [vite] hmr update /src/index.css
+11:58:28 AM [vite] hmr update /src/index.css
+11:58:34 AM [vite] page reload index.html
+12:00:12 PM [vite] hmr update /src/index.css
+12:03:26 PM [vite] hmr update /src/index.css
+12:05:44 PM [vite] hmr update /src/index.css
+12:06:06 PM [vite] hmr update /src/index.css
+12:07:57 PM [vite] hmr update /src/index.css
+12:08:15 PM [vite] hmr update /src/index.css
+12:10:18 PM [vite] hmr update /src/index.css

@@ -11,6 +11,193 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Dark mode styles */
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Pure Black theme styles */
+  .pure-black body {
+    background: #1f2937 !important; /* Dark gray like dark mode */
+    color: #ffffff !important;
+  }
+
+  .pure-black {
+    color-scheme: dark;
+  }
+
+  /* Pure White theme styles */
+  .pure-white body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .pure-white {
+    color-scheme: light;
+  }
+
+  /* Dark mode component overrides */
+  .dark .bg-white {
+    @apply bg-gray-800 !important;
+  }
+  
+  .dark .text-gray-900 {
+    @apply text-gray-100 !important;
+  }
+  
+  .dark .text-gray-800 {
+    @apply text-gray-200 !important;
+  }
+  
+  .dark .text-gray-700 {
+    @apply text-gray-300 !important;
+  }
+  
+  .dark .text-gray-600 {
+    @apply text-gray-400 !important;
+  }
+  
+  .dark .border-gray-200 {
+    @apply border-gray-700 !important;
+  }
+  
+  .dark .border-gray-300 {
+    @apply border-gray-600 !important;
+  }
+  
+  .dark .bg-gray-50 {
+    @apply bg-gray-900 !important;
+  }
+  
+  .dark .bg-gray-100 {
+    @apply bg-gray-800 !important;
+  }
+
+  /* Pure Black theme overrides */
+  .pure-black .bg-white,
+  .pure-black .bg-gray-50,
+  .pure-black .bg-gray-100,
+  .pure-black .bg-gray-200,
+  .pure-black .bg-gray-800,
+  .pure-black .bg-gray-900 {
+    background-color: #1f2937 !important; /* Use dark gray instead of pure black */
+  }
+
+  /* Override any custom backgrounds for pure themes */
+  .pure-black main,
+  .pure-black header {
+    background-image: none !important;
+    background: #1f2937 !important;
+  }
+
+  .pure-black .text-gray-900,
+  .pure-black .text-gray-800,
+  .pure-black .text-gray-700,
+  .pure-black .text-gray-600,
+  .pure-black .text-gray-100,
+  .pure-black .text-gray-200,
+  .pure-black .text-gray-300,
+  .pure-black .text-gray-400 {
+    color: #ffffff !important;
+  }
+
+  .pure-black .border-gray-200,
+  .pure-black .border-gray-300,
+  .pure-black .border-gray-600,
+  .pure-black .border-gray-700 {
+    border-color: #333333 !important;
+  }
+
+  /* Pure White theme overrides */
+  .pure-white .bg-white,
+  .pure-white .bg-gray-50,
+  .pure-white .bg-gray-100,
+  .pure-white .bg-gray-200,
+  .pure-white .bg-gray-800,
+  .pure-white .bg-gray-900 {
+    background-color: #ffffff !important;
+  }
+
+  /* Override any custom backgrounds for pure themes */
+  .pure-white main,
+  .pure-white header {
+    background-image: none !important;
+    background: #ffffff !important;
+  }
+
+  .pure-white .text-gray-900,
+  .pure-white .text-gray-800,
+  .pure-white .text-gray-700,
+  .pure-white .text-gray-600,
+  .pure-white .text-gray-100,
+  .pure-white .text-gray-200,
+  .pure-white .text-gray-300,
+  .pure-white .text-gray-400 {
+    color: #000000 !important;
+  }
+
+  .pure-white .border-gray-200,
+  .pure-white .border-gray-300,
+  .pure-white .border-gray-600,
+  .pure-white .border-gray-700 {
+    border-color: #e5e7eb !important;
+  }
+
+  /* Chart and graph specific overrides */
+  .dark .chart-container {
+    @apply bg-gray-800 !important;
+  }
+  
+  .dark .chart-background {
+    @apply bg-gray-700 !important;
+  }
+  
+  /* Gradient backgrounds for dark mode */
+  .dark .from-gray-50 {
+    @apply from-gray-800 !important;
+  }
+  
+  .dark .to-gray-50 {
+    @apply to-gray-800 !important;
+  }
+  
+  .dark .from-blue-50 {
+    @apply from-gray-800 !important;
+  }
+  
+  .dark .to-blue-50 {
+    @apply to-gray-700 !important;
+  }
+  
+  .dark .to-purple-50 {
+    @apply to-gray-700 !important;
+  }
+  
+  .dark .from-purple-50 {
+    @apply from-gray-800 !important;
+  }
+  
+  .dark .from-green-50 {
+    @apply from-gray-800 !important;
+  }
+  
+  .dark .to-green-50 {
+    @apply to-gray-700 !important;
+  }
+
+  /* SVG and chart text colors */
+  .dark svg text {
+    fill: #e5e7eb !important;
+  }
+  
+  .dark .svg-text {
+    @apply text-gray-300 !important;
+  }
 }
 
 /* Custom scrollbar */
@@ -110,4 +297,685 @@
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+/* Theme transition loading */
+.theme-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.1), 
+    rgba(139, 92, 246, 0.1), 
+    rgba(236, 72, 153, 0.1)
+  );
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.theme-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.theme-transition-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Gradient border effects */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  border-radius: 12px;
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.3), 
+    rgba(139, 92, 246, 0.3), 
+    rgba(236, 72, 153, 0.3),
+    rgba(34, 197, 94, 0.3)
+  );
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.dark .gradient-border::before {
+  background: linear-gradient(45deg, 
+    rgba(96, 165, 250, 0.4), 
+    rgba(167, 139, 250, 0.4), 
+    rgba(244, 114, 182, 0.4),
+    rgba(74, 222, 128, 0.4)
+  );
+}
+
+.gradient-border-content {
+  background: inherit;
+  border-radius: 11px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced glass morphism */
+.glass-enhanced {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-enhanced {
+  background: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Header with custom background enhancements */
+header.glass-enhanced {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark header.glass-enhanced {
+  border-bottom: 1px solid rgba(75, 85, 99, 0.4);
+}
+
+/* Header button enhancements for custom backgrounds */
+header .glass-enhanced button,
+header.glass-enhanced button {
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+header .glass-enhanced button:hover,
+header.glass-enhanced button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark header .glass-enhanced button:hover,
+.dark header.glass-enhanced button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Seamless container transitions */
+.seamless-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.dark .seamless-container {
+  background: linear-gradient(135deg, 
+    rgba(31, 41, 55, 0.95) 0%, 
+    rgba(17, 24, 39, 0.9) 100%
+  );
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Sidebar text color protection - never change */
+aside .text-white,
+aside .text-gray-300,
+aside .text-gray-400 {
+  color: inherit !important;
+}
+
+/* Ensure sidebar navigation items maintain their colors */
+aside nav a {
+  color: rgb(209, 213, 219) !important; /* text-gray-300 */
+}
+
+aside nav a:hover {
+  color: white !important;
+}
+
+aside nav a.bg-gradient-to-r {
+  color: white !important;
+}
+
+/* Sidebar user section text */
+aside .border-t p {
+  color: inherit !important;
+}
+
+/* Text contrast fixes for better visibility */
+/* Priority indicators with high contrast */
+.bg-red-100.text-red-700,
+.bg-yellow-100.text-yellow-700,
+.bg-green-100.text-green-700,
+.bg-blue-100.text-blue-700,
+.bg-purple-100.text-purple-700,
+.bg-orange-100.text-orange-700 {
+  background-color: rgb(75, 85, 99) !important; /* gray-600 */
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* High priority gets red background */
+.bg-red-100.text-red-700 {
+  background-color: rgb(220, 38, 38) !important; /* red-600 */
+}
+
+/* Medium priority gets yellow/orange background */
+.bg-yellow-100.text-yellow-700,
+.bg-orange-100.text-orange-700 {
+  background-color: rgb(217, 119, 6) !important; /* yellow-600 */
+}
+
+/* Success/positive gets green background */
+.bg-green-100.text-green-700 {
+  background-color: rgb(22, 163, 74) !important; /* green-600 */
+}
+
+/* Info gets blue background */
+.bg-blue-100.text-blue-700 {
+  background-color: rgb(37, 99, 235) !important; /* blue-600 */
+}
+
+/* Special gets purple background */
+.bg-purple-100.text-purple-700 {
+  background-color: rgb(147, 51, 234) !important; /* purple-600 */
+}
+
+/* Confidence percentages with better visibility */
+.confidence-badge {
+  background-color: rgb(75, 85, 99) !important; /* gray-600 */
+  color: white !important;
+  font-weight: 500 !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+}
+
+/* Icon containers with better contrast */
+.bg-green-100:has(.text-green-600),
+.bg-blue-100:has(.text-blue-600),
+.bg-purple-100:has(.text-purple-600),
+.bg-red-100:has(.text-red-600),
+.bg-yellow-100:has(.text-yellow-600) {
+  background-color: rgb(75, 85, 99) !important; /* gray-600 */
+}
+
+.bg-green-100:has(.text-green-600) .text-green-600,
+.bg-blue-100:has(.text-blue-600) .text-blue-600,
+.bg-purple-100:has(.text-purple-600) .text-purple-600,
+.bg-red-100:has(.text-red-600) .text-red-600,
+.bg-yellow-100:has(.text-yellow-600) .text-yellow-600 {
+  color: white !important;
+}
+
+/* Gradient header text shadow for better readability */
+.bg-gradient-to-r.text-white,
+.bg-gradient-to-br.text-white,
+.bg-gradient-to-l.text-white,
+.bg-gradient-to-t.text-white,
+.bg-gradient-to-b.text-white {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  font-weight: 600 !important;
+}
+
+/* Ensure gradient headers have minimum contrast */
+.bg-gradient-to-r {
+  position: relative;
+}
+
+.bg-gradient-to-r::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.bg-gradient-to-r > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* AI Insights text contrast fixes */
+.bg-green-50 h3,
+.bg-green-50 .text-gray-900,
+.bg-yellow-50 h3,
+.bg-yellow-50 .text-gray-900,
+.bg-blue-50 h3,
+.bg-blue-50 .text-gray-900,
+.bg-purple-50 h3,
+.bg-purple-50 .text-gray-900 {
+  color: rgb(31, 41, 55) !important; /* gray-800 for better contrast */
+  font-weight: 700 !important;
+}
+
+.bg-green-50 p,
+.bg-green-50 .text-gray-600,
+.bg-yellow-50 p,
+.bg-yellow-50 .text-gray-600,
+.bg-blue-50 p,
+.bg-blue-50 .text-gray-600,
+.bg-purple-50 p,
+.bg-purple-50 .text-gray-600 {
+  color: rgb(55, 65, 81) !important; /* gray-700 for better contrast */
+  font-weight: 500 !important;
+}
+
+/* Modal and alert text contrast fixes */
+.bg-green-50 .text-green-800,
+.bg-yellow-50 .text-yellow-800,
+.bg-blue-50 .text-blue-800,
+.bg-purple-50 .text-purple-800,
+.bg-red-50 .text-red-800,
+.bg-orange-50 .text-orange-800 {
+  color: rgb(31, 41, 55) !important; /* gray-800 for better contrast */
+  font-weight: 600 !important;
+}
+
+/* Light background text should be dark for contrast */
+.text-green-800,
+.text-yellow-800,
+.text-blue-800,
+.text-purple-800,
+.text-red-800,
+.text-orange-800 {
+  color: rgb(31, 41, 55) !important; /* gray-800 */
+  font-weight: 600 !important;
+}
+
+/* Cohort analysis and percentage text improvements */
+.bg-green-100.text-green-800,
+.bg-yellow-100.text-yellow-800,
+.bg-red-100.text-red-800 {
+  background-color: rgb(75, 85, 99) !important; /* gray-600 */
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* AI Insights specific container fixes */
+.bg-green-50.border-green-400,
+.bg-yellow-50.border-yellow-400,
+.bg-blue-50.border-blue-400,
+.bg-purple-50.border-purple-400 {
+  background-color: rgb(249, 250, 251) !important; /* gray-50 for better text contrast */
+}
+
+.bg-green-50.border-green-400 * {
+  color: rgb(31, 41, 55) !important; /* Force all text to gray-800 */
+}
+
+.bg-yellow-50.border-yellow-400 * {
+  color: rgb(31, 41, 55) !important; /* Force all text to gray-800 */
+}
+
+.bg-blue-50.border-blue-400 * {
+  color: rgb(31, 41, 55) !important; /* Force all text to gray-800 */
+}
+
+.bg-purple-50.border-purple-400 * {
+  color: rgb(31, 41, 55) !important; /* Force all text to gray-800 */
+}
+
+/* Exception for priority badges and confidence badges - they should stay styled */
+.bg-green-50 .bg-red-600,
+.bg-green-50 .bg-yellow-600,
+.bg-green-50 .bg-gray-600,
+.bg-yellow-50 .bg-red-600,
+.bg-yellow-50 .bg-yellow-600,
+.bg-yellow-50 .bg-gray-600,
+.bg-blue-50 .bg-red-600,
+.bg-blue-50 .bg-yellow-600,
+.bg-blue-50 .bg-gray-600,
+.bg-purple-50 .bg-red-600,
+.bg-purple-50 .bg-yellow-600,
+.bg-purple-50 .bg-gray-600 {
+  color: white !important; /* Keep badges white text */
+}
+
+
+/* SPECIFIC TEXT CONTRAST FIXES FOR REQUESTED SECTIONS ONLY */
+
+/* Campaign Performance ROI Section - 0% Return on Investment */
+.bg-orange-50 .text-2xl.font-bold.text-gray-900,
+.bg-orange-50 p.text-gray-900,
+.bg-orange-50 .text-gray-900 {
+  color: rgb(17, 24, 39) !important; /* Very dark gray for contrast */
+  font-weight: 800 !important;
+}
+
+.bg-orange-50 .text-sm.text-gray-600,
+.bg-orange-50 p.text-gray-600,
+.bg-orange-50 .text-gray-600 {
+  color: rgb(31, 41, 55) !important; /* Dark gray for "Return on Investment" text */
+  font-weight: 600 !important;
+}
+
+/* Mall Operations Traffic/Revenue/Conversion Text - Force ALL text to dark */
+/* Main Entrance, Food Court, Fashion District, Electronics, Kids Zone */
+.bg-blue-50 h3, .bg-blue-50 h4, .bg-blue-50 h5,
+.bg-blue-50 p, .bg-blue-50 span, .bg-blue-50 div,
+.bg-green-50 h3, .bg-green-50 h4, .bg-green-50 h5,
+.bg-green-50 p, .bg-green-50 span, .bg-green-50 div,
+.bg-red-50 h3, .bg-red-50 h4, .bg-red-50 h5,
+.bg-red-50 p, .bg-red-50 span, .bg-red-50 div,
+.bg-yellow-50 h3, .bg-yellow-50 h4, .bg-yellow-50 h5,
+.bg-yellow-50 p, .bg-yellow-50 span, .bg-yellow-50 div,
+.bg-purple-50 h3, .bg-purple-50 h4, .bg-purple-50 h5,
+.bg-purple-50 p, .bg-purple-50 span, .bg-purple-50 div {
+  color: rgb(17, 24, 39) !important; /* Very dark/black for all text */
+  font-weight: 700 !important;
+}
+
+/* Mall zone names specifically */
+.bg-blue-50 .font-medium,
+.bg-green-50 .font-medium,
+.bg-red-50 .font-medium,
+.bg-yellow-50 .font-medium,
+.bg-purple-50 .font-medium {
+  color: rgb(17, 24, 39) !important; /* Black for zone names */
+  font-weight: 800 !important;
+}
+
+/* Traffic/Revenue/Conversion labels */
+.bg-blue-50 .text-sm, .bg-blue-50 .text-xs,
+.bg-green-50 .text-sm, .bg-green-50 .text-xs,
+.bg-red-50 .text-sm, .bg-red-50 .text-xs,
+.bg-yellow-50 .text-sm, .bg-yellow-50 .text-xs,
+.bg-purple-50 .text-sm, .bg-purple-50 .text-xs {
+  color: rgb(31, 41, 55) !important; /* Dark gray for labels */
+  font-weight: 600 !important;
+}
+
+/* All percentage and revenue values in colored backgrounds */
+.bg-blue-50 .text-2xl, .bg-blue-50 .text-xl, .bg-blue-50 .text-lg,
+.bg-green-50 .text-2xl, .bg-green-50 .text-xl, .bg-green-50 .text-lg,
+.bg-red-50 .text-2xl, .bg-red-50 .text-xl, .bg-red-50 .text-lg,
+.bg-yellow-50 .text-2xl, .bg-yellow-50 .text-xl, .bg-yellow-50 .text-lg,
+.bg-purple-50 .text-2xl, .bg-purple-50 .text-xl, .bg-purple-50 .text-lg {
+  color: rgb(0, 0, 0) !important; /* Pure black for maximum contrast */
+  font-weight: 900 !important;
+}
+
+/* Loyalty Management Membership Tiers Text - Force BLACK text */
+/* Orange/VIP member cards specific fixes */
+.bg-orange-100 h3, .bg-orange-100 h4, .bg-orange-100 h5,
+.bg-orange-100 p, .bg-orange-100 span, .bg-orange-100 div,
+.bg-rose-100 h3, .bg-rose-100 h4, .bg-rose-100 h5,
+.bg-rose-100 p, .bg-rose-100 span, .bg-rose-100 div,
+.bg-yellow-100 h3, .bg-yellow-100 h4, .bg-yellow-100 h5,
+.bg-yellow-100 p, .bg-yellow-100 span, .bg-yellow-100 div,
+.bg-purple-100 h3, .bg-purple-100 h4, .bg-purple-100 h5,
+.bg-purple-100 p, .bg-purple-100 span, .bg-purple-100 div {
+  color: rgb(0, 0, 0) !important; /* Pure black for all membership text */
+  font-weight: 700 !important;
+}
+
+/* VIP/Orange card tier names specifically */
+.bg-orange-100 .font-semibold,
+.bg-rose-100 .font-semibold,
+.bg-yellow-100 .font-semibold,
+.bg-purple-100 .font-semibold {
+  color: rgb(0, 0, 0) !important; /* Black for tier names */
+  font-weight: 900 !important;
+}
+
+/* Member counts, spending amounts, benefits */
+.bg-orange-100 .text-xl, .bg-orange-100 .text-lg, .bg-orange-100 .text-2xl,
+.bg-rose-100 .text-xl, .bg-rose-100 .text-lg, .bg-rose-100 .text-2xl,
+.bg-yellow-100 .text-xl, .bg-yellow-100 .text-lg, .bg-yellow-100 .text-2xl,
+.bg-purple-100 .text-xl, .bg-purple-100 .text-lg, .bg-purple-100 .text-2xl {
+  color: rgb(0, 0, 0) !important; /* Black for numbers */
+  font-weight: 900 !important;
+}
+
+/* Labels like "Members", "Spending", "Benefits" */
+.bg-orange-100 .text-gray-600, .bg-orange-100 .text-sm, .bg-orange-100 .text-xs,
+.bg-rose-100 .text-gray-600, .bg-rose-100 .text-sm, .bg-rose-100 .text-xs,
+.bg-yellow-100 .text-gray-600, .bg-yellow-100 .text-sm, .bg-yellow-100 .text-xs,
+.bg-purple-100 .text-gray-600, .bg-purple-100 .text-sm, .bg-purple-100 .text-xs {
+  color: rgb(17, 24, 39) !important; /* Very dark gray for labels */
+  font-weight: 600 !important;
+}
+
+/* "1.0% of total members" text */
+.bg-rose-100 .text-gray-500,
+.bg-orange-100 .text-gray-500,
+.bg-yellow-100 .text-gray-500,
+.bg-purple-100 .text-gray-500 {
+  color: rgb(31, 41, 55) !important; /* Dark gray */
+  font-weight: 600 !important;
+}
+
+/* Large percentage values (0%, 95%, 87%, etc.) */
+.text-2xl.font-bold {
+  color: rgb(17, 24, 39) !important; /* Extra dark for visibility */
+  font-weight: 900 !important;
+}
+
+/* Revenue amounts (¥280K, ¥456K, etc.) */
+.text-lg.font-semibold {
+  color: rgb(17, 24, 39) !important; /* Dark for money values */
+  font-weight: 800 !important;
+}
+
+/* Conversion percentages (23.4%, 31.2%, etc.) */
+.text-base.font-medium {
+  color: rgb(31, 41, 55) !important; /* Dark gray */
+  font-weight: 700 !important;
+}
+
+/* Member counts (45,620, 680) */
+.text-xl.font-bold {
+  color: rgb(17, 24, 39) !important; /* Very dark */
+  font-weight: 900 !important;
+}
+
+/* Headers/Subheaders on default backgrounds - DO NOT use black */
+/* Only apply black text to headers inside colored backgrounds */
+body h1, body h2, body h3, body h4, body h5, body h6,
+.bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+.bg-gray-50 h1, .bg-gray-50 h2, .bg-gray-50 h3, .bg-gray-50 h4, .bg-gray-50 h5, .bg-gray-50 h6,
+.bg-gray-100 h1, .bg-gray-100 h2, .bg-gray-100 h3, .bg-gray-100 h4, .bg-gray-100 h5, .bg-gray-100 h6,
+.bg-gray-800 h1, .bg-gray-800 h2, .bg-gray-800 h3, .bg-gray-800 h4, .bg-gray-800 h5, .bg-gray-800 h6,
+.bg-gray-900 h1, .bg-gray-900 h2, .bg-gray-900 h3, .bg-gray-900 h4, .bg-gray-900 h5, .bg-gray-900 h6 {
+  color: inherit !important; /* Keep original color scheme */
+  font-weight: inherit !important;
+}
+
+/* General text on default backgrounds - preserve original colors */
+.bg-white p, .bg-white span, .bg-white div,
+.bg-gray-50 p, .bg-gray-50 span, .bg-gray-50 div,
+.bg-gray-100 p, .bg-gray-100 span, .bg-gray-100 div,
+.bg-gray-800 p, .bg-gray-800 span, .bg-gray-800 div,
+.bg-gray-900 p, .bg-gray-900 span, .bg-gray-900 div {
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* ENSURE ALL HEADERS AND SUBHEADERS ARE BOLDED */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important; /* Bold all headers */
+}
+
+/* Extra bold for main headers */
+h1 {
+  font-weight: 900 !important;
+}
+
+h2 {
+  font-weight: 800 !important;
+}
+
+/* Subheaders with specific classes */
+.text-lg.font-semibold,
+.text-xl.font-semibold,
+.text-2xl.font-semibold,
+.text-3xl.font-semibold {
+  font-weight: 700 !important;
+}
+
+/* Page titles and section headers */
+.font-bold {
+  font-weight: 800 !important;
+}
+
+.font-semibold {
+  font-weight: 700 !important;
+}
+
+/* NESTED COLORED ELEMENTS IN CAMPAIGN CENTER - Force contrast */
+/* Impressions/Conversions boxes within default containers */
+.bg-white .bg-blue-50 .text-blue-600,
+.bg-white .bg-blue-50 .text-blue-900,
+.bg-gray-50 .bg-blue-50 .text-blue-600,
+.bg-gray-50 .bg-blue-50 .text-blue-900 {
+  color: rgb(0, 0, 0) !important; /* Force black text */
+  font-weight: 700 !important;
+}
+
+.bg-white .bg-green-50 .text-green-600,
+.bg-white .bg-green-50 .text-green-900,
+.bg-gray-50 .bg-green-50 .text-green-600,
+.bg-gray-50 .bg-green-50 .text-green-900 {
+  color: rgb(0, 0, 0) !important; /* Force black text */
+  font-weight: 700 !important;
+}
+
+/* Large numbers in nested colored boxes */
+.bg-white .bg-blue-50 .text-lg.font-bold,
+.bg-white .bg-green-50 .text-lg.font-bold,
+.bg-gray-50 .bg-blue-50 .text-lg.font-bold,
+.bg-gray-50 .bg-green-50 .text-lg.font-bold {
+  color: rgb(0, 0, 0) !important; /* Pure black for numbers */
+  font-weight: 900 !important;
+  font-size: 1.125rem !important; /* Restore text-lg size */
+}
+
+/* Medium text in nested boxes */
+.bg-white .bg-blue-50 .text-sm,
+.bg-white .bg-green-50 .text-sm,
+.bg-gray-50 .bg-blue-50 .text-sm,
+.bg-gray-50 .bg-green-50 .text-sm {
+  color: rgb(31, 41, 55) !important; /* Dark gray for labels */
+  font-weight: 600 !important;
+  font-size: 0.875rem !important; /* Restore text-sm size */
+}
+
+/* Restore specific text sizes from previous corrections */
+.text-xs {
+  font-size: 0.75rem !important;
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+}
+
+.text-base {
+  font-size: 1rem !important;
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+}
+
+.text-4xl {
+  font-size: 2.25rem !important;
+}
+
+/* Nested colored elements in ANY default container */
+.bg-blue-50 .text-blue-600,
+.bg-blue-50 .text-blue-700,
+.bg-blue-50 .text-blue-800,
+.bg-blue-50 .text-blue-900 {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+}
+
+.bg-green-50 .text-green-600,
+.bg-green-50 .text-green-700,
+.bg-green-50 .text-green-800,
+.bg-green-50 .text-green-900 {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+}
+
+.bg-red-50 .text-red-600,
+.bg-red-50 .text-red-700,
+.bg-red-50 .text-red-800,
+.bg-red-50 .text-red-900 {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+}
+
+.bg-orange-50 .text-orange-600,
+.bg-orange-50 .text-orange-700,
+.bg-orange-50 .text-orange-800,
+.bg-orange-50 .text-orange-900 {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+}
+
+.bg-purple-50 .text-purple-600,
+.bg-purple-50 .text-purple-700,
+.bg-purple-50 .text-purple-800,
+.bg-purple-50 .text-purple-900 {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700 !important;
+}
+
+/* Smooth theme transitions for all elements */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }

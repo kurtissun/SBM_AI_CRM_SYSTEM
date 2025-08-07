@@ -122,6 +122,21 @@ class Report(Base):
     file_path = Column(String)
     status = Column(String, default="generated")
 
+class User(Base):
+    __tablename__ = "users"
+    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    username = Column(String, unique=True, index=True)
+    email = Column(String, unique=True, index=True)
+    hashed_password = Column(String)
+    display_name = Column(String)
+    profile_picture = Column(Text)  # Base64 encoded or URL
+    theme = Column(String, default="dark")  # Theme preference
+    custom_background = Column(Text)  # Base64 encoded background image
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
 # Database functions
 
 def get_db() -> Generator[Session, None, None]:

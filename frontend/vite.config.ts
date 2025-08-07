@@ -11,22 +11,23 @@ export default defineConfig({
   },
   server: {
     port: 4000,
-    host: true, // Listen on all network interfaces 
-    strictPort: false, // Try different ports if 4000 is busy
+    host: 'localhost', // Explicit localhost binding
+    strictPort: true, // Force port 4000 only
     cors: true, // Enable CORS for VPN compatibility
+    open: false, // Don't auto-open browser
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,
       },
       '/auth': {
-        target: 'http://localhost:8000',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,
       },
       '/ws': {
-        target: 'ws://localhost:8000',
+        target: 'ws://localhost:8080',
         ws: true,
         changeOrigin: true,
       },

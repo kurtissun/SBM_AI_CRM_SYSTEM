@@ -1,0 +1,987 @@
+OpenAI API key not found - using fallback responses
+2025-07-31 10:43:27,091 - api.main - WARNING - ⚠️ Failed to import customers: attempted relative import beyond top-level package
+2025-07-31 10:43:27,092 - api.main - WARNING - ⚠️ Failed to import campaigns: attempted relative import beyond top-level package
+2025-07-31 10:43:27,092 - api.main - WARNING - ⚠️ Failed to import analytics: attempted relative import beyond top-level package
+2025-07-31 10:43:27,093 - api.main - WARNING - ⚠️ Failed to import reports: attempted relative import beyond top-level package
+2025-07-31 10:43:27,093 - api.main - WARNING - ⚠️ Failed to import chat: attempted relative import beyond top-level package
+2025-07-31 10:43:27,093 - api.main - WARNING - ⚠️ Failed to import sbm_config: attempted relative import beyond top-level package
+2025-07-31 10:43:27,093 - api.main - WARNING - ⚠️ Failed to import journey: attempted relative import beyond top-level package
+2025-07-31 10:43:27,094 - api.main - WARNING - ⚠️ Failed to import automation: attempted relative import beyond top-level package
+2025-07-31 10:43:27,094 - api.main - WARNING - ⚠️ Failed to import scoring: attempted relative import beyond top-level package
+2025-07-31 10:43:27,094 - api.main - WARNING - ⚠️ Failed to import attribution: attempted relative import beyond top-level package
+2025-07-31 10:43:27,095 - api.main - WARNING - ⚠️ Failed to import notifications: attempted relative import beyond top-level package
+2025-07-31 10:43:27,095 - api.main - WARNING - ⚠️ Failed to import dynamic_segmentation: attempted relative import beyond top-level package
+2025-07-31 10:43:27,096 - api.main - WARNING - ⚠️ Failed to import behavioral_analytics: attempted relative import beyond top-level package
+2025-07-31 10:43:27,096 - api.main - WARNING - ⚠️ Failed to import webhooks: attempted relative import beyond top-level package
+2025-07-31 10:43:27,096 - api.main - WARNING - ⚠️ Failed to import charts: attempted relative import beyond top-level package
+2025-07-31 10:43:27,096 - api.main - WARNING - ⚠️ Failed to import personalization: attempted relative import beyond top-level package
+2025-07-31 10:43:27,097 - api.main - WARNING - ⚠️ Failed to import campaign_advisor: attempted relative import beyond top-level package
+2025-07-31 10:43:27,104 - api.main - INFO - ✅ Imported user_settings endpoint
+2025-07-31 10:43:27,110 - api.main - INFO - ✅ Imported data_import endpoint
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Customers not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Campaigns not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Analytics not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Reports not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module AI Chat Assistant not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module SBM Configuration not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Customer Journey & Lifecycle not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Marketing Automation not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Lead Scoring & Qualification not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Revenue Attribution not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Real-time Notifications & Alerts not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Advanced Dynamic Segmentation not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Behavioral Analytics not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Webhook Integration System not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Custom Reporting & Chart Engine not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Hyper-Personalization not available or missing router
+2025-07-31 10:43:27,110 - api.main - WARNING - ⚠️ Module Campaign Intelligence not available or missing router
+2025-07-31 10:43:27,115 - api.main - INFO - ✅ Included User Settings router at /api/user
+2025-07-31 10:43:27,118 - api.main - INFO - ✅ Included Data Import router at /api/import
+2025-07-31 10:43:27,118 - api.main - INFO - 🎯 Successfully included 2/19 comprehensive endpoint routers
+INFO:     Started server process [5935]
+INFO:     Waiting for application startup.
+2025-07-31 10:43:27,123 - api.main - INFO - 🚀 SBM AI CRM Backend Enterprise Edition starting up...
+2025-07-31 10:43:27,127 - api.main - INFO - ✅ Database initialized
+2025-07-31 10:43:27,127 - api.main - INFO - ✅ AI models loading skipped for compatibility
+2025-07-31 10:43:27,127 - api.main - ERROR - ❌ Engine initialization failed: No inspection system is available for object of type <class 'str'>
+2025-07-31 10:43:27,127 - api.main - WARNING - ⚠️  Running in limited mode
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2025-07-31 10:44:04,318 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:04,546 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 10:44:04,546 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.228s
+🚀 SBM AI CRM Backend - Quick Launch
+==================================================
+🌐 Starting server on http://0.0.0.0:8080
+📚 API Documentation: http://localhost:4000/docs
+🔧 System Status: http://localhost:4000/api/system/status
+
+🎯 Press CTRL+C to stop the server
+==================================================
+INFO:     127.0.0.1:56118 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:04,556 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:04,560 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 10:44:04,560 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:56120 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:14,025 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:14,028 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:56173 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:14,032 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:14,035 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:56177 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:16,391 - api.main - INFO - 📨 DELETE /api/user/profile-picture - Client: 127.0.0.1
+2025-07-31 10:44:16,396 - api.main - INFO - ✅ DELETE /api/user/profile-picture - 200 - 0.005s
+INFO:     127.0.0.1:56231 - "DELETE /api/user/profile-picture HTTP/1.1" 200 OK
+2025-07-31 10:44:16,408 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:16,411 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:56235 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:19,541 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:19,550 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:56239 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:20,299 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:20,307 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:56243 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:21,213 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:21,221 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:56247 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:21,794 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:21,805 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:56251 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:22,518 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:22,531 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:56261 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:44:24,629 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:44:24,639 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.010s
+INFO:     127.0.0.1:56309 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:49:34,925 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:49:34,932 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:56569 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:49:34,938 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:49:34,941 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:56571 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:56:33,714 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:56:33,717 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:57632 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:56:33,721 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:56:33,723 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:57634 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:56:37,080 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:56:37,082 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:57697 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:56:37,085 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:56:37,087 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:57699 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:56:58,272 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:56:58,275 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:57769 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:56:58,277 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:56:58,279 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:57771 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:58:37,029 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:58:37,032 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:58055 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:58:37,037 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:58:37,040 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:58059 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:58:39,963 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:58:39,973 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:58064 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:58:43,837 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:58:43,844 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:58122 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:58:45,348 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:58:45,359 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:58124 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 10:58:45,862 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 10:58:45,872 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:58128 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:03:42,056 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:03:42,059 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:59637 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:04:52,963 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:04:52,967 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:59967 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:04:52,973 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:04:52,977 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:59971 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:04:59,549 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:04:59,554 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:59988 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:05:00,114 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:05:00,120 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:59992 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:05:00,515 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:05:00,520 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:59996 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:05:01,014 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:05:01,019 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60000 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:05:01,459 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:05:01,464 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60004 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:05:02,147 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:05:02,151 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60008 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:05:02,531 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:05:02,536 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60012 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:11,651 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:11,655 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60081 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:13,272 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:13,279 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:60085 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:18,070 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:18,079 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:60137 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:19,714 - api.main - INFO - 📨 DELETE /api/user/background - Client: 127.0.0.1
+2025-07-31 11:06:19,718 - api.main - INFO - ✅ DELETE /api/user/background - 200 - 0.004s
+INFO:     127.0.0.1:60185 - "DELETE /api/user/background HTTP/1.1" 200 OK
+2025-07-31 11:06:24,157 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:24,162 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60189 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:24,692 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:24,697 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60193 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:25,312 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:25,317 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60197 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:26,147 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:26,158 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:60201 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:26,596 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:26,600 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60205 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:26,992 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:26,997 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60209 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:27,410 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:27,415 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60213 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:27,557 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:27,564 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:60217 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:28,412 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:28,417 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60222 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:28,559 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:28,565 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60226 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:28,691 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:28,696 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60230 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:30,961 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:30,966 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60234 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:32,192 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:32,197 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60238 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:32,578 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:32,583 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60242 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:41,808 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:41,813 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60354 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:41,817 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:41,821 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60356 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:46,869 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:46,877 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:60358 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:47,861 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:06:47,867 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:60362 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:06:49,098 - api.main - INFO - 📨 DELETE /api/user/background - Client: 127.0.0.1
+2025-07-31 11:06:49,102 - api.main - INFO - ✅ DELETE /api/user/background - 200 - 0.004s
+INFO:     127.0.0.1:60366 - "DELETE /api/user/background HTTP/1.1" 200 OK
+2025-07-31 11:07:57,571 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:07:57,574 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:60428 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:07:57,577 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:07:57,579 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:60432 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:08:03,348 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:08:03,354 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:60436 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:08:03,368 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:08:03,370 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:60440 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:08:09,047 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:08:09,052 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60446 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:08:09,064 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:08:09,066 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:60450 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:08:14,082 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:08:14,087 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60454 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:08:14,100 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:08:14,102 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:60458 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:32,112 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:32,114 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:60642 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:32,117 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:32,120 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:60644 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:32,124 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:32,129 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60646 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:32,133 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:32,136 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:60648 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:35,198 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:35,203 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60652 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:36,579 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:36,583 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60656 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:37,247 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:37,252 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:60712 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:37,930 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:37,935 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60716 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:38,363 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:38,369 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60720 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:38,713 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:38,718 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60726 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:39,701 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:39,706 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60730 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:40,904 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:40,913 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:60734 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:41,363 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:41,368 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:60738 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:45,455 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:09:45,468 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:60744 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:09:46,568 - api.main - INFO - 📨 DELETE /api/user/background - Client: 127.0.0.1
+2025-07-31 11:09:46,574 - api.main - INFO - ✅ DELETE /api/user/background - 200 - 0.005s
+INFO:     127.0.0.1:60748 - "DELETE /api/user/background HTTP/1.1" 200 OK
+2025-07-31 11:11:50,618 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:50,621 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61332 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:50,623 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:50,627 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61334 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:54,013 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:54,016 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61336 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:54,019 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:54,021 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61338 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:55,742 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:55,747 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61340 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:57,190 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:57,195 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61344 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:57,874 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:57,879 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61348 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:11:58,475 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:11:58,479 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61352 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:05,224 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:05,226 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61369 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:05,229 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:05,231 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61371 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:05,234 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:05,237 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61373 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:05,241 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:05,243 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61375 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:09,504 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:09,509 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61428 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:14,126 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:14,129 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61443 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:14,132 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:14,136 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61491 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:29,451 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:29,453 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61550 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:29,456 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:29,458 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61552 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:37,339 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:37,342 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61572 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:37,344 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:37,346 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61574 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:43,939 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:43,942 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61626 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:43,946 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:43,950 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61630 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:46,172 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:46,176 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61634 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:48,674 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:48,678 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61638 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:49,038 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:49,040 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61653 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:49,042 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:49,045 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61655 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:49,049 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:49,052 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61657 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:49,056 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:49,059 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61659 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:12:52,811 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:12:52,815 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61709 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:05,060 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:05,062 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61728 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:05,065 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:05,068 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61730 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:05,072 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:05,076 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61732 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:05,080 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:05,083 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61734 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:08,963 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:08,968 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61790 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:17,247 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:17,252 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61832 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:17,781 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:17,786 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61838 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:26,511 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:26,515 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61842 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:26,950 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:26,952 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61857 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:26,955 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:26,958 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61859 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:26,962 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:26,967 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61861 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:26,972 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:26,974 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61911 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:29,539 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:29,544 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61915 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:29,687 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:29,691 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61917 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:29,803 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:29,808 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61921 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:33,571 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:33,575 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:61965 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:34,289 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:34,295 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61969 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:34,770 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:34,775 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:61973 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:46,597 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:46,599 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:61997 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:46,602 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:46,605 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:61999 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:46,609 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:46,612 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62001 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:13:46,616 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:13:46,619 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62003 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:09,091 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:09,094 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 11:14:09,094 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62160 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:09,097 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:09,100 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 11:14:09,100 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62162 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:09,103 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:09,106 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 11:14:09,106 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62164 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:09,110 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:09,112 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 11:14:09,112 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62168 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:30,841 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:30,843 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62282 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:30,846 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:30,849 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62284 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:30,854 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:30,858 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:62286 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:30,863 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:30,866 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62288 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:44,983 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:44,985 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62396 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:44,988 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:44,990 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62398 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:44,993 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:44,995 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62400 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:14:44,997 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:14:45,000 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62404 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:02,031 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:02,033 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62504 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:02,035 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:02,037 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62506 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:02,040 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:02,042 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62508 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:02,045 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:02,047 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62512 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:23,982 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:23,984 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62664 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:23,987 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:23,989 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62666 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:23,992 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:23,994 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62668 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:23,997 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:23,999 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62672 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:36,039 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:36,041 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62735 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:36,044 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:36,047 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62737 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:36,050 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:36,053 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62739 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:36,057 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:36,060 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:62743 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:46,041 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:46,043 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62810 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:46,046 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:46,048 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62812 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:46,051 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:46,053 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62814 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:15:46,056 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:15:46,058 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62818 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:16:03,060 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:16:03,063 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62875 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:16:03,065 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:16:03,067 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62877 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:16:03,070 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:16:03,072 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62879 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:16:03,075 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:16:03,077 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:62883 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:00,803 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:00,805 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:63997 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:07,785 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:07,788 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64054 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:07,790 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:07,792 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64056 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:14,786 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:14,789 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64112 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:19,915 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:19,917 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:64122 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:24,311 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:24,314 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64172 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:24,318 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:24,321 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:64174 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:26,229 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:26,234 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64176 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:28,179 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:28,181 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64188 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:28,184 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:28,187 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64190 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:28,190 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:28,193 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:64192 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:30,746 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:30,752 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:64240 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:39,911 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:39,920 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:64290 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:40,565 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:40,570 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64294 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:42,913 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:42,918 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64298 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:43,763 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:43,768 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64302 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:44,230 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:44,236 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64306 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:44,959 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:44,964 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:64310 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:45,846 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:45,851 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64365 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:46,529 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:46,534 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64367 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:47,158 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:47,164 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64371 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:47,817 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:47,823 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:64377 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:48,362 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:48,367 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64381 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:49,279 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:49,286 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:64385 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:50,011 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:50,016 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64390 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:20:53,494 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:20:53,499 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64396 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:23,144 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:23,147 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64554 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:23,149 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:23,151 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64556 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:23,153 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:23,155 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64558 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:23,158 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:23,160 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64562 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:34,985 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:34,987 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64645 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:34,990 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:34,992 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64647 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:34,996 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:34,998 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64649 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:35,001 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:35,003 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:64653 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:48,442 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:48,447 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:64699 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:48,866 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:48,872 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64703 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:49,754 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:49,764 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:64707 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:50,388 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:50,394 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:64713 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:50,898 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:50,903 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64717 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:51,203 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:51,210 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:64721 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:51,670 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:51,676 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64725 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:52,138 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:52,143 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64729 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:21:52,639 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:21:52,644 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:64733 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:25:04,464 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:25:04,468 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:65278 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:25:04,471 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:25:04,474 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:65280 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:25:10,251 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:25:10,256 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:65316 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:25:19,639 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:25:19,647 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:65361 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:25:35,913 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:25:35,925 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:65451 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:25:43,061 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:25:43,064 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:65494 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:30:54,104 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:30:54,111 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:50050 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:30:54,119 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:30:54,127 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:50054 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:10,628 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:10,637 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.009s
+INFO:     127.0.0.1:50067 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:31:12,078 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:12,082 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.003s
+INFO:     127.0.0.1:50071 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:31:14,995 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:15,006 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:50075 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:16,563 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:16,574 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:50079 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:17,965 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:17,971 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.006s
+INFO:     127.0.0.1:50083 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:31:19,444 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:19,447 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.003s
+INFO:     127.0.0.1:50087 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:31:20,841 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:20,845 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.004s
+INFO:     127.0.0.1:50091 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:31:22,045 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:22,053 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:50095 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:23,113 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:23,126 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.013s
+INFO:     127.0.0.1:50099 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:34,742 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:34,751 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:50105 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:34,764 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:34,771 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:50109 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:37,180 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:37,193 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:50114 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:38,108 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:38,127 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.019s
+INFO:     127.0.0.1:50118 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:31:39,074 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:31:39,083 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:50122 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:32:30,079 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:32:30,085 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:50268 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:32:30,102 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:32:30,111 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:50271 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:32:32,077 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:32:32,084 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:50276 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:33:15,996 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:33:16,002 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:50469 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:33:16,008 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:33:16,013 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:50471 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:06,016 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:06,018 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:50978 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:22,236 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:22,245 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:51066 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:22,272 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:22,286 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.014s
+INFO:     127.0.0.1:51072 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:24,101 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:24,113 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:51076 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:37,104 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:37,113 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:51085 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:37,119 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:37,124 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:51089 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:38:39,046 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:39,050 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.004s
+INFO:     127.0.0.1:51095 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:38:40,639 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:40,641 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.002s
+INFO:     127.0.0.1:51141 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:38:42,220 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:42,222 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.002s
+INFO:     127.0.0.1:51145 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:38:43,356 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:38:43,359 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.003s
+INFO:     127.0.0.1:51149 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:39:11,884 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:39:11,897 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:51274 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:39:11,905 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:39:11,908 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:51280 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:39:14,637 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:39:14,643 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:51282 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:39:16,754 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:39:16,760 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:51286 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:50,547 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:50,553 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:51682 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:50,564 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:50,570 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:51686 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:52,263 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:52,274 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:51735 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:53,577 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:53,588 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:51737 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:54,795 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:54,808 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.013s
+INFO:     127.0.0.1:51741 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:40:56,020 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:56,022 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.002s
+INFO:     127.0.0.1:51747 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:40:57,555 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:57,561 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:51751 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:58,754 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:58,760 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:51755 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:40:59,766 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:40:59,775 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:51759 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:00,804 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:00,806 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.002s
+INFO:     127.0.0.1:51765 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:41:01,870 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:01,873 - api.main - INFO - ✅ PUT /api/user/profile - 422 - 0.002s
+INFO:     127.0.0.1:51769 - "PUT /api/user/profile HTTP/1.1" 422 Unprocessable Entity
+2025-07-31 11:41:10,771 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:10,777 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:51819 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:11,177 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:11,187 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.009s
+INFO:     127.0.0.1:51823 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:11,779 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:11,784 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.005s
+INFO:     127.0.0.1:51827 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:12,362 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:12,368 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:51831 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:13,563 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:13,568 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.006s
+INFO:     127.0.0.1:51835 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:14,443 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:14,455 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:51843 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:15,644 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:15,663 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.018s
+INFO:     127.0.0.1:51847 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:41:16,701 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:41:16,712 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:51851 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:44:41,397 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:44:41,405 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 11:44:41,405 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:52439 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:44:41,420 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:44:41,428 - api.main - INFO - 🔄 Token refreshed for request to /api/user/profile
+2025-07-31 11:44:41,429 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:52441 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:44:46,839 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:44:46,939 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.099s
+INFO:     127.0.0.1:52447 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:11,837 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:11,890 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.053s
+INFO:     127.0.0.1:52820 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:11,902 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:11,974 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.071s
+INFO:     127.0.0.1:52822 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:16,827 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:16,840 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.014s
+INFO:     127.0.0.1:52868 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:22,929 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:22,945 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.015s
+INFO:     127.0.0.1:52916 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:22,956 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:22,963 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.008s
+INFO:     127.0.0.1:52918 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:24,906 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:24,913 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.007s
+INFO:     127.0.0.1:52923 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:46:26,744 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:46:26,754 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:52927 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:49:51,284 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:49:51,287 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:53635 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:49:51,290 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:49:51,293 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:53637 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:54:22,460 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:54:22,470 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.010s
+INFO:     127.0.0.1:54461 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:54:22,486 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:54:22,497 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.011s
+INFO:     127.0.0.1:54467 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:58:35,276 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:58:35,279 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:55019 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 11:58:35,281 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 11:58:35,283 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.002s
+INFO:     127.0.0.1:55021 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:10:05,322 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:10:05,357 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.034s
+INFO:     127.0.0.1:56228 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:10:05,366 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:10:05,378 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:56232 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:10:07,160 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:10:07,184 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.024s
+INFO:     127.0.0.1:56236 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:10:13,206 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:10:13,228 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.022s
+INFO:     127.0.0.1:56240 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:10:14,122 - api.main - INFO - 📨 DELETE /api/user/background - Client: 127.0.0.1
+2025-07-31 12:10:14,134 - api.main - INFO - ✅ DELETE /api/user/background - 200 - 0.012s
+INFO:     127.0.0.1:56244 - "DELETE /api/user/background HTTP/1.1" 200 OK
+2025-07-31 12:12:43,954 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:12:43,957 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:57240 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:12:43,962 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:12:43,966 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.004s
+INFO:     127.0.0.1:57244 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:12:48,700 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:12:48,712 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.012s
+INFO:     127.0.0.1:57248 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:12:49,359 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:12:49,375 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.016s
+INFO:     127.0.0.1:57252 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:19:48,909 - api.main - INFO - 📨 POST /auth/login - Client: 127.0.0.1
+2025-07-31 12:19:48,947 - api.main - INFO - ✅ POST /auth/login - 200 - 0.040s
+Cache set error: Error 61 connecting to localhost:6379. Connection refused.
+INFO:     127.0.0.1:57646 - "POST /auth/login HTTP/1.1" 200 OK
+2025-07-31 12:19:48,969 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:19:48,979 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.010s
+INFO:     127.0.0.1:57652 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:22:41,234 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:22:41,247 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.013s
+INFO:     127.0.0.1:57670 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:22:41,252 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:22:41,255 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.003s
+INFO:     127.0.0.1:57674 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:22:47,397 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:22:47,437 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.039s
+INFO:     127.0.0.1:57678 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:22:47,461 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:22:47,480 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.020s
+INFO:     127.0.0.1:57682 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:22:53,376 - api.main - INFO - 📨 PUT /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:22:53,436 - api.main - INFO - ✅ PUT /api/user/profile - 200 - 0.060s
+INFO:     127.0.0.1:57686 - "PUT /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:23:24,646 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:23:24,703 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.057s
+INFO:     127.0.0.1:57704 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:23:24,709 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:23:24,751 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.042s
+INFO:     127.0.0.1:57706 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:23:24,757 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:23:24,799 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.042s
+INFO:     127.0.0.1:57708 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:23:24,805 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:23:24,855 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.050s
+INFO:     127.0.0.1:57710 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:25:50,334 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:25:50,390 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.056s
+INFO:     127.0.0.1:57731 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:25:50,397 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:25:50,466 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.069s
+INFO:     127.0.0.1:57733 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:25:50,472 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:25:50,529 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.057s
+INFO:     127.0.0.1:57736 - "GET /api/user/profile HTTP/1.1" 200 OK
+2025-07-31 12:25:50,535 - api.main - INFO - 📨 GET /api/user/profile - Client: 127.0.0.1
+2025-07-31 12:25:50,586 - api.main - INFO - ✅ GET /api/user/profile - 200 - 0.051s
+INFO:     127.0.0.1:57740 - "GET /api/user/profile HTTP/1.1" 200 OK

@@ -650,7 +650,7 @@ endpoint_names = [
     'customers', 'campaigns', 'analytics', 'reports', 'chat', 'sbm_config',
     'journey', 'automation', 'scoring', 'attribution', 'notifications', 
     'dynamic_segmentation', 'behavioral_analytics', 'webhooks', 'charts',
-    'personalization', 'campaign_advisor'
+    'personalization', 'campaign_advisor', 'user_settings', 'data_import'
 ]
 
 for endpoint_name in endpoint_names:
@@ -678,6 +678,8 @@ webhooks = endpoint_modules.get('webhooks')
 charts = endpoint_modules.get('charts')
 personalization = endpoint_modules.get('personalization')
 campaign_advisor = endpoint_modules.get('campaign_advisor')
+user_settings = endpoint_modules.get('user_settings')
+data_import = endpoint_modules.get('data_import')
 
 all_endpoints_available = len(endpoint_modules) > 10  # At least most endpoints available
 
@@ -719,7 +721,9 @@ endpoint_configs = [
     (webhooks, "/api/webhooks", "Webhook Integration System"),
     (charts, "/api/charts", "Custom Reporting & Chart Engine"),
     (personalization, "/api/personalization", "Hyper-Personalization"),
-    (campaign_advisor, "/api/campaign-advisor", "Campaign Intelligence")
+    (campaign_advisor, "/api/campaign-advisor", "Campaign Intelligence"),
+    (user_settings, "/api/user", "User Settings"),
+    (data_import, "/api/import", "Data Import")
 ]
 
 successful_includes = 0
@@ -1047,7 +1051,7 @@ if __name__ == "__main__":
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8080,
+        port=4000,
         reload=True,
         log_level="info",
         access_log=True

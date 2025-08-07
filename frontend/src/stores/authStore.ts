@@ -12,6 +12,12 @@ interface User {
   permissions: string[]
   refreshKey?: string
   refreshKeyExpiry?: string
+  fullName?: string
+  jobTitle?: string
+  company?: string
+  phone?: string
+  bio?: string
+  profilePicture?: string | null
 }
 
 interface AuthState {
@@ -27,6 +33,7 @@ interface AuthState {
   logout: () => void
   checkAuth: () => void
   updateToken: (token: string) => void
+  updateUser: (userData: Partial<User>) => void
 }
 
 // Configure axios defaults
@@ -220,6 +227,14 @@ export const useAuthStore = create<AuthState>()(
 
       updateToken: (token: string) => {
         set({ token })
+      },
+
+      updateUser: (userData: Partial<User>) => {
+        const currentUser = get().user
+        if (currentUser) {
+          const updatedUser = { ...currentUser, ...userData }
+          set({ user: updatedUser })
+        }
       },
     }),
     {
