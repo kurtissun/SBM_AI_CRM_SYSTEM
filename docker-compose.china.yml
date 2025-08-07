@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: docker.m.daocloud.io/library/postgres:15
+    container_name: sbm-postgres
+    environment:
+      - POSTGRES_DB=sbm_crm
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=superbrandmall
+      - POSTGRES_INITDB_ARGS="--encoding=UTF8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    networks:
+      - sbm-network
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: docker.m.daocloud.io/library/redis:7-alpine
+    container_name: sbm-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - sbm-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Main Backend API Service (Port 8080)
+  sbm-backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sbm-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgresql://postgres:superbrandmall@postgres:5432/sbm_crm
+      - REDIS_URL=redis://redis:6379/0
+      - ENVIRONMENT=production
+      - HOST=0.0.0.0
+      - PORT=8080
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - sbm-network
+    restart: unless-stopped
+    command: python run_server.py
+
+  # Frontend Service (Port 4000)
+  sbm-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sbm-frontend
+    ports:
+      - "4000:4000"
+    environment:
+      - VITE_API_URL=http://localhost:8080
+      - PORT=4000
+    depends_on:
+      - sbm-backend
+    volumes:
+      - ./frontend:/app
+    networks:
+      - sbm-network
+    restart: unless-stopped
+    command: npm run dev -- --host 0.0.0.0 --port 4000
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  sbm-network:
+    driver: bridge
