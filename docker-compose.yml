@@ -43,7 +43,7 @@ services:
 
   # PostgreSQL Database
   postgres:
-    image: docker.m.daocloud.io/library/
+    image: docker.m.daocloud.io/library/postgres:15
     container_name: sbm-postgres
     environment:
       - POSTGRES_DB=sbm_crm
