@@ -9,8 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /app
 
 # Use Chinese mirrors for apt
-RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources && \
-    apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     wget \
