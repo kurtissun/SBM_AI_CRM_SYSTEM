@@ -60,7 +60,7 @@ services:
 
   # Redis Cache
   redis:
-    image: redis:7-alpine
+    image: docker.m.daocloud.io/library/redis:7-alpine
     container_name: sbm-redis
     ports:
       - "6379:6379"
@@ -73,7 +73,7 @@ services:
 
   # Nginx Reverse Proxy
   nginx:
-    image: nginx:alpine
+    image: docker.m.daocloud.io/library/nginx:alpine
     container_name: sbm-nginx
     ports:
       - "80:80"
@@ -110,7 +110,7 @@ services:
 
   # Monitoring with Prometheus
   prometheus:
-    image: prom/prometheus
+    image: docker.m.daocloud.io/prom/prometheus
     container_name: sbm-prometheus
     ports:
       - "9090:9090"
@@ -123,7 +123,7 @@ services:
 
   # Grafana Dashboard
   grafana:
-    image: grafana/grafana
+    image: docker.m.daocloud.io/grafana/grafana
     container_name: sbm-grafana
     ports:
       - "3000:3000"
