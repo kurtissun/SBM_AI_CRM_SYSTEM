@@ -9,7 +9,7 @@ services:
       - POSTGRES_DB=sbm_crm
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=superbrandmall
-      - POSTGRES_INITDB_ARGS="--encoding=UTF8 --lc-collate=C --lc-ctype=C"
+      - POSTGRES_INITDB_ARGS=--locale=C.UTF-8 --encoding=UTF8
     ports:
       - "5432:5432"
     volumes:
@@ -60,10 +60,10 @@ services:
 
   # Frontend Service (Port 4000)
   sbm-frontend:
+    container_name: sbm-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: sbm-frontend
     ports:
       - "4000:4000"
     environment:
@@ -71,8 +71,6 @@ services:
       - PORT=4000
     depends_on:
       - sbm-backend
-    volumes:
-      - ./frontend:/app
     networks:
       - sbm-network
     restart: unless-stopped
