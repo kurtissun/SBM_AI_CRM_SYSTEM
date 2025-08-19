@@ -1,28 +1,26 @@
-FROM docker.m.daocloud.io/library/node:18-slim
+FROM docker.m.daocloud.io/library/node:24-alpine3.21
 
-# Set work directory
 WORKDIR /app
 
-# Use Chinese npm registry
-RUN npm config set registry https://registry.npmmirror.com
+ENV npm_config_loglevel=warn \
+    npm_config_audit=false \
+    npm_config_fund=false
 
-# Copy package files
-COPY package*.json ./
+# If you really need a mirror, uncomment:
+# RUN npm config set registry https://registry.npmmirror.com
+RUN npm config set registry https://registry.npmjs.org
 
-# Install dependencies
+COPY package.json ./
+
+# Install deps
 RUN npm install
 
-# Copy project files
+# Copy source
 COPY . .
 
-# Build the application
-RUN npm run build
-
-# Expose port 4000
+# Vite dev server
 EXPOSE 4000
-
-# Set environment variable for port
+ENV HOST=0.0.0.0
 ENV PORT=4000
 
-# Start the application
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "4000"]
