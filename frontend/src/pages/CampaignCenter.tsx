@@ -27,6 +27,7 @@ const CampaignOverview: React.FC = () => {
   const [showBulkActions, setShowBulkActions] = useState(false)
   const [selectedView, setSelectedView] = useState('grid')
   const [isGeneratingReport, setIsGeneratingReport] = useState(false)
+  const [showExportModal, setShowExportModal] = useState(false)
   const queryClient = useQueryClient()
 
   // Initialize with mock campaigns if empty
@@ -553,7 +554,7 @@ const CampaignOverview: React.FC = () => {
 
       {/* Campaign Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredCampaigns.map((campaign) => (
+        {filteredCampaigns.map((campaign: any) => (
           <motion.div
             key={campaign.id}
             initial={{ opacity: 0, y: 20 }}
@@ -806,6 +807,7 @@ const CampaignIntelligence: React.FC = () => {
   const [selectedModel, setSelectedModel] = useState('ensemble')
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d')
   const [intelligenceView, setIntelligenceView] = useState('overview')
+  const [isGeneratingReport, setIsGeneratingReport] = useState(false);
 
   const { data: campaignIntelligence } = useQuery({
     queryKey: ['campaign-intelligence', selectedModel, selectedTimeframe],
@@ -1365,7 +1367,7 @@ const CampaignAnalytics: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {campaigns.slice(1).map((campaign, index) => (
+                    {campaigns.slice(1).map((campaign: any, index) => (
                       <tr key={campaign.id} className="border-b border-gray-100 hover:bg-gray-50">
                         <td className="py-3 px-4">
                           <div className="font-medium text-gray-900">{campaign.name}</div>

@@ -152,7 +152,7 @@ export const AIInsightsFeed: React.FC = () => {
           )
         })}
 
-        {(!insights || insights.length === 0) && (
+        {(!insights || (Array.isArray(insights) && insights.length === 0)) && (
           <div className="text-center py-8">
             <Brain className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <p className="text-gray-500 mb-2">No AI insights available</p>
@@ -163,7 +163,7 @@ export const AIInsightsFeed: React.FC = () => {
         )}
       </div>
 
-      {insights && insights.length > 0 && (
+      {insights && (Array.isArray(insights) && insights.length > 0) && (
         <div className="mt-6 pt-4 border-t border-gray-200">
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-600">

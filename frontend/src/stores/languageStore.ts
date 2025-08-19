@@ -174,7 +174,7 @@ export const useLanguageStore = create<LanguageState>()(
       setLanguage: (language: Language) => set({ language }),
       t: (key: string) => {
         const { language } = get()
-        const translation = translations[language]?.[key] || translations.en[key] || key
+        const translation = (translations as any)[language]?.[key] || (translations as any).en[key] || key
         return translation
       }
     }),

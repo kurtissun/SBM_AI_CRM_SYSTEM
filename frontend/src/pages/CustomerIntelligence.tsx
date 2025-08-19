@@ -107,7 +107,7 @@ const ImportDataModal: React.FC<{
 
   const downloadSample = async () => {
     try {
-      toast.info('Downloading sample file...')
+      toast.success('Downloading sample file...')
       const response = await fetch('/api/import/sample?data_type=customers&format=csv', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -670,12 +670,12 @@ const CustomerOverview: React.FC = () => {
   const [showImportModal, setShowImportModal] = useState(false)
   const queryClient = useQueryClient()
 
-  const { data: customers, isLoading } = useQuery({
+  const { data: customers, isLoading } = useQuery<any>({
     queryKey: ['customers', searchQuery, selectedSegment],
     queryFn: () => api.get(`/customers?search=${searchQuery}&segment=${selectedSegment}`),
   })
 
-  const { data: customerStats } = useQuery({
+  const { data: customerStats } = useQuery<any>({
     queryKey: ['customer-stats'],
     queryFn: () => api.get('/customers/stats'),
   })
@@ -1010,7 +1010,7 @@ const CustomerOverview: React.FC = () => {
       {/* Advanced Analytics Modal */}
       {showAnalytics && (
         <CustomerAnalytics 
-          customers={customers || []}
+          customers={customers as any[] || []}
           onClose={() => setShowAnalytics(false)}
         />
       )}
@@ -1051,12 +1051,12 @@ const CustomerAnalyticsTab: React.FC = () => {
   const [selectedMetric, setSelectedMetric] = useState('value')
   const [selectedView, setSelectedView] = useState('chart')
 
-  const { data: analyticsData } = useQuery({
+  const { data: analyticsData } = useQuery<any>({
     queryKey: ['customer-analytics', selectedTimeRange, selectedMetric],
     queryFn: () => api.get(`/analytics/customers?range=${selectedTimeRange}&metric=${selectedMetric}`),
   })
 
-  const { data: aiInsights } = useQuery({
+  const { data: aiInsights } = useQuery<any>({
     queryKey: ['customer-ai-insights'],
     queryFn: () => api.get('/analytics/ai-insights'),
   })

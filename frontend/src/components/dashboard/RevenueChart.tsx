@@ -21,11 +21,11 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
   })
 
   const chartData = {
-    labels: revenueData?.labels || [],
+    labels: (revenueData as any)?.labels || [],
     datasets: [
       {
         label: 'Revenue',
-        data: revenueData?.revenue || [],
+        data: (revenueData as any)?.revenue || [],
         borderColor: colors.primarySolid[0],
         backgroundColor: colors.primary[0].replace('0.8', '0.1'),
         borderWidth: 2,
@@ -34,7 +34,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
       },
       {
         label: 'Predicted',
-        data: revenueData?.predicted || [],
+        data: (revenueData as any)?.predicted || [],
         borderColor: colors.primarySolid[3],
         backgroundColor: colors.primary[3].replace('0.8', '0.1'),
         borderWidth: 2,
@@ -133,7 +133,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
             <span className={`text-sm font-medium ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Total: ¥{revenueData?.total?.toLocaleString() || '0'}
+              Total: ¥{(revenueData as any)?.total?.toLocaleString() || '0'}
             </span>
           </div>
           <div className="flex items-center">
@@ -141,7 +141,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ period }) => {
             <span className={`text-sm font-medium ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Growth: {revenueData?.growth || '0'}%
+              Growth: {(revenueData as any)?.growth || '0'}%
             </span>
           </div>
         </div>

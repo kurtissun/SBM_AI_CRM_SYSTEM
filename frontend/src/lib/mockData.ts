@@ -1042,8 +1042,7 @@ class MockDataStore {
   }
 
   private generateFreshInsights() {
-    const customerStats = this.getCustomerStats()
-    const campaignStats = this.getCampaignStats()
+    const customerStats = this.getCustomerStats() as any
     
     // Generate insights based on current data
     const dynamicInsights = [
@@ -1181,7 +1180,7 @@ class MockDataStore {
   }
 
   getGeographicData() {
-    const locationStats = {}
+    const locationStats = {} as any
     this.customers.forEach(customer => {
       const city = customer.location.split(',')[0].trim()
       locationStats[city] = (locationStats[city] || 0) + 1

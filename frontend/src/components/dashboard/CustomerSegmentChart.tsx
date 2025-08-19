@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { api } from '@/lib/api'
 
 export const CustomerSegmentChart: React.FC = () => {
-  const { data: segmentData, isLoading } = useQuery({
+  const { data: segmentData, isLoading } = useQuery<any>({
     queryKey: ['customer-segments'],
     queryFn: () => api.get('/segmentation/overview'),
   })
@@ -90,7 +90,7 @@ export const CustomerSegmentChart: React.FC = () => {
       </div>
 
       <div className="space-y-3">
-        {Array.isArray(segmentData?.segments) && segmentData.segments.map((segment: any, index: number) => (
+        {Array.isArray((segmentData as any)?.segments) && segmentData.segments.map((segment: any, index: number) => (
           <div key={segment.name} className="flex items-center justify-between">
             <div className="flex items-center">
               <div
@@ -114,7 +114,7 @@ export const CustomerSegmentChart: React.FC = () => {
             <span className="text-sm font-medium text-gray-700">Total Customers</span>
           </div>
           <span className="text-lg font-bold text-gray-900">
-            {segmentData?.total?.toLocaleString() || '0'}
+            {(segmentData as any)?.total?.toLocaleString() || '0'}
           </span>
         </div>
       </div>

@@ -723,8 +723,8 @@ const translations = {
     'alert.reportsExported': 'Reports exported successfully!',
     'alert.rewardAdding': 'Adding new reward...',
     'alert.rewardAdded': 'New reward added successfully!',
-    'alert.campaignCreating': 'Creating campaign...',
-    'alert.campaignCreated': 'Campaign created successfully!',
+    // 'alert.campaignCreating': 'Creating campaign...',
+    // 'alert.campaignCreated': 'Campaign created successfully!',
     'alert.feedsRefreshing': 'Refreshing camera feeds...',
     'alert.feedsRefreshed': 'All camera feeds refreshed!',
     'alert.logsExporting': 'Exporting security logs...',
@@ -761,7 +761,7 @@ const translations = {
     'campaign.exportFormat': 'Export Format',
     'campaign.performanceOverview': 'Performance Overview',
     'campaign.performance': 'Performance',
-    'campaign.attribution': 'Attribution',
+    // 'campaign.attribution': 'Attribution',
     'campaign.funnelAnalysis': 'Funnel Analysis',
     'campaign.cohortAnalysis': 'Cohort Analysis',
     'campaign.performanceDescription': 'Overall campaign performance metrics',
@@ -1651,8 +1651,8 @@ const translations = {
     'alert.reportsExported': '报告导出成功！',
     'alert.rewardAdding': '正在添加新奖励...',
     'alert.rewardAdded': '新奖励添加成功！',
-    'alert.campaignCreating': '正在创建营销活动...',
-    'alert.campaignCreated': '营销活动创建成功！',
+    // 'alert.campaignCreating': '正在创建营销活动...',
+    // 'alert.campaignCreated': '营销活动创建成功！',
     'alert.feedsRefreshing': '正在刷新摄像头数据源...',
     'alert.feedsRefreshed': '所有摄像头数据源已刷新！',
     'alert.logsExporting': '正在导出安全日志...',
@@ -1689,7 +1689,7 @@ const translations = {
     'campaign.exportFormat': '导出格式',
     'campaign.performanceOverview': '性能概览',
     'campaign.performance': '性能分析',
-    'campaign.attribution': '归因分析',
+    // 'campaign.attribution': '归因分析',
     'campaign.funnelAnalysis': '漏斗分析',
     'campaign.cohortAnalysis': '队列分析',
     'campaign.performanceDescription': '整体营销活动性能指标',
@@ -1881,7 +1881,7 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ c
   }, [language])
 
   const t = (key: string): string => {
-    return translations[language][key] || key
+    return (translations as any)[language][key] || key
   }
 
   return (

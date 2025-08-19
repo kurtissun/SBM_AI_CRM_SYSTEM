@@ -79,7 +79,7 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({ onClose })
           </div>
         ) : (
           <div className="divide-y divide-gray-100">
-            {notifications?.map((notification: any) => {
+            {Array.isArray(notifications) && notifications?.map((notification: any) => {
               const IconComponent = notificationIcons[notification.type as keyof typeof notificationIcons] || Info
               const colorClasses = notificationColors[notification.type as keyof typeof notificationColors] || notificationColors.info
 
@@ -111,7 +111,7 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({ onClose })
               )
             })}
 
-            {(!notifications || notifications.length === 0) && (
+            {(!notifications || (Array.isArray(notifications) && notifications.length === 0)) && (
               <div className="p-8 text-center">
                 <Bell className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-500 mb-2">{t('notifications.noNotifications')}</p>

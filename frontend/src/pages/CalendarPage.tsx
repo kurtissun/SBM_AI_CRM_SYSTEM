@@ -122,7 +122,7 @@ export const CalendarPage: React.FC = () => {
 
   // Generate calendar events from campaigns and holidays
   useEffect(() => {
-    const campaignEvents: CalendarEvent[] = campaigns.map(campaign => ({
+    const campaignEvents: any[] = campaigns.map(campaign => ({
       id: campaign.id,
       title: campaign.name,
       date: campaign.schedule.startDate,
